@@ -1,0 +1,506 @@
+{
+  "last_node_id": 105,
+  "last_link_id": 55,
+  "nodes": [
+    {
+      "id": 77,
+      "type": "Note",
+      "pos": [
+        137.06275033660756,
+        184.12451140278463
+      ],
+      "size": {
+        "0": 385.17352294921875,
+        "1": 995.1629638671875
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "title": "画质",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "4K\n4K画质\n8K\n8K画质\nHD\n高清\nHDR\n高动态光照渲染图像\nUhD\n超高清画质\nunreal engine\n虚幻引擎\nultra realistic\n超逼真的\nphotography\n摄影图片\ndetailed\n详细的细节\nreal life\n真实生活\n35mm\n35mm镜头，也可以设置为其他镜头参数\nrealistic\n现实主义的\nepic\n游戏质感\n3D rendering\n3D渲染\ncinematic\n电电影感\nleica lens\n徕卡镜头\nscene design\n场景设计(适合建筑、风景等）\noctane render\nOC渲染器\nphotorealistic\n照相写实主义(画出与照片类似的逼真效果）\nhyper realistic 超真实的\nhigh on details\n注重细节\ncinematic effect 电影效果\nspace reflection\n空间反射\nintricated details 错综复杂的细节\ncommercial photography 商业摄影"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 76,
+      "type": "Note",
+      "pos": [
+        528.0627503366076,
+        185.12451140278463
+      ],
+      "size": {
+        "0": 385.17352294921875,
+        "1": 995.1629638671875
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "title": "艺术流派",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "浪漫主义\n- Romanticism\n古典主义\n- Classicism\n古典现实主义\n- Classical Realism\n新古典主义 - Neoclassicism\n印象主义/印象派- lmpressionism\n新印象派 - Neo-impressionism\n现代主义\n= Modernism\n后现代主义 - Postmodernism\n现实主义\n- Realism\n达达主义 - Dadaism\n超现实主义- Hyperrealism / Surrealism\n野性主义/硬朗主义\n- Brutalism\n野兽主义/野兽派\n- Fauvism\n表现主义 -Expressionism\n光色主义\n- Luminism\n日本主义 - Japonism\n魔幻现实主义\n- Magic Realism\n奇幻现实主义- Fantastic Realism\n同步主义\n- Synchronism\n解构主义 - Deconstructivism\n抽象表现主义\n- Abstract Expressionism\n极简主义 - Minimalism\n构成主义\n- Constructivism\n当代现实主义- Contemporary Realism\n未来主义\n- Futurism\n悲惨主义- Miserablism\n学院主义/学院派\n- Academism\n立体主义/立体派\n- Cubism\n结构主义\n- Structuralism\n后结构主义\n- Poststructuralism\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 75,
+      "type": "Note",
+      "pos": [
+        922.0627503366079,
+        185.12451140278463
+      ],
+      "size": {
+        "0": 385.17352294921875,
+        "1": 995.1629638671875
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "title": "视角",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "aerial view\n鸟瞰图\nTop view\n顶视图\ntilt-shift\n倾斜移位\nsatellite view\n卫星视图\nBottom view\n底视图\nfront,side,rear view\n前视图、侧视图、后视图\nproduct view\n产品视图\nlook up\nfirst-person view\n第\n一人称视角\nisometric view\n等等距视图\ncloseup view\n特写视图\nhigh angle view\n高角度视图\nmicroscopic view\n微观\nthird-person perspective\n第三人称视角\ntwo-point perspective\n两点透视\nThree-point perspective\n三点透视\nElevation perspective\n立面透视\nultra wide shot 超广角镜头\ncinematic shot\n电影镜头\nin focus\n焦点对准\ndepth of field(dof)\n景深(dof)\nWide-angle view\n广角镜头\ncanon 5d,1fujiflm xt100,Sony alpha 相机型号焦段光圈"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 74,
+      "type": "Note",
+      "pos": [
+        1316.062750336609,
+        184.12451140278463
+      ],
+      "size": {
+        "0": 385.17352294921875,
+        "1": 995.1629638671875
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "title": "光照",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "cold light\n冷光\nWarm light\n暖光\nbright\n明亮的\natmospheric lighting\n氛国感照明\nhard lighting\n强光/硬光\nrim lights\n边缘灯\nSplit Lighting\n分体照明\nfront lighting\n前灯\nBack lighting\n背光照明\nCrepuscular Ray\n黄昏的光线\nfluorescent lighting\n荧光灯\nRembrandt Lighting\n伦勃朗光\nrays of shimmering light/morning light\n微光/晨光\nSoft illumination/soft lights\n柔和的照明/柔光\ncinematic lighting/Dramatic lighting\n电影照明/戏剧灯光\nclean background trending\n千净的背景趋势\nglobal illuminations\n全局照明\nneon cold lighting\n霓虹灯冷光\nneon lights\n霓虹灯，赛博朋克风格必备\nvolumetric lighting\n体积照明\ndramatic lighting\n舞台灯光\nRim light\n轮廓光\nnatural lighting\n自然灯光\n版本兼容性：个别参数会存在不同版本(V)的兼容"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 73,
+      "type": "Note",
+      "pos": [
+        1708.1075612385941,
+        185.19788860744822
+      ],
+      "size": {
+        "0": 385.17352294921875,
+        "1": 995.1629638671875
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "title": "风格",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Ukiyoe\n浮世绘风格\nJaponism 日本主义风格\nInk painting 水墨画\nDisney style 迪土尼风格\nPixar style\n皮克斯风格\nIllustration\n插面风格\nPop art 波普艺术风格\nCartoon\n卡通风格\nSteampunk\n蒸汽朋克风格\nPixel art\n像素艺术风格\nCvberpunk 赛博朋克风格\nConcept art\n概念艺术风格\nDigital illustration 数字插画风格\nWatercolor painting\n水彩画\nGhibli Studio style\n吉卜力风格\nDoodle\n涂鸦风格\nManga\n漫画风格\nOp Art/Optical Art 欧普艺术/光学艺术风格\nBlack and white 黑白风格\nJapanese graphic design poster\nMiyazaki Hayao style\n宫崎骏风格\n日本平面设计海报风格"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 72,
+      "type": "Note",
+      "pos": [
+        2101.062750336608,
+        186.12451140278463
+      ],
+      "size": {
+        "0": 423.505859375,
+        "1": 995.4931030273438
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "title": "场景",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "雪域-Snowy region\n梦境-dreamland\n飞跃云端 -above the clouds\n幻想．\n— Fantasy\n高原- Plateau\n现实主义 一 Realism\n寺庙\n- Temple\n异想夭开\n- Unbridled imagination\n草原 - Grassland\n天马行空 - A powerful and\n洞穴\n- Cave\nunconstrained style\n地宫\n- Underground palace\n超现实主义-\n- Surrealism\n仙境- Wonderland\n超写实主义一Hyperrealism\n海岛- Island\n废墟\n— Ruins\n蛮荒之地- Wilderness\n城市中心-City centre ; Downtownarea\n山谷 - Valley\n废弃城市一 Abandoned city\n沼泽地- Swamp\n街景- Street view\n宫殿- Palace\n超广角-Utra-wide angle\n水潭- Pool\n宇宙- Universe\n冰天雪地 - lcy tundra\n银河系 一 Galaxy\n古代战场 - Ancient battlefeld\n星云- Nebula\n大厅 - Hall\n晨雾一 In the morning fog\n瀑布 - Waterfall\n异世界- different world\n机关\n- Mechanism\n地狱-hades nether world; hell\n部落\n- Tribe\n杂草丛生 - Overgrown with weeds\n幻境- llusory realm\n高山草甸- Alpine meadow\n密林深处 - Deep In The Woods\n空中花园一 The Hanging Gardens\n海岸线\n- Coastline\n遗迹-vestige\n云海- Sea of clouds\n千净背景-Bright background\n世界末日 一 Apocalypse"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 78,
+      "type": "Note",
+      "pos": [
+        2532,
+        188
+      ],
+      "size": {
+        "0": 653.3707275390625,
+        "1": 992.162841796875
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "title": "参数设定",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "--q ＋数宇 范国值：1-4，算法选择，最新v4，图像的细节、构图上有了极大的提升\n--v ＋数宇 范国值：1-5，默认1，更高质量，耗时翻倍2，更强更久3、 4、 5\n--hd 直接使用 生成更高清图，但是会减少图片中的细节，适用于风景画、抽象画\n--upbeta 直接使用 增加图片细节，生成质量更高，风格更奇特\n--test 直接使用 和--upbeta类似，介于艺术与写实之问，质量更高/风格奇特\n--ti1e 直接使用 生成四方无缝贴图，暂不支持v4模式 下使用\n--niji 直接使用 生成动漫风格图像\n--ar n:m ＋数宇，控制图片尺寸比例，n是宽，m是高，例--ar 16:9\n--seed ＋数宇，基于面作生成类似图。右键图像添加「信封」图标 Seed值会DM中发送你\n--no ＋物品 后加具体物品，出图将不包含该物品\n--creat ive 直接使用 创造(性）的，创作的;有创造力的，有想象力的\n--iw +数字 范围值：0.25-5，设置图片与参考图和描述文字的相似程度\n--Chaos +数字 范围值：0-100，生成四张风格迥异的图，数宇越大，风格越不一致\n--s +数宇 范围值：625-60000。默认2500。生成个性化艺术，更有创造里、想象力图\n/setting 可召唤出选项框，设置默认选项\nface shot 或 look front) 关键词，解决A绘画出侧脸的问题，更精确生成正脸图"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 85,
+      "type": "Esheep-Midjourney-Prompt",
+      "pos": [
+        211.49498303561984,
+        1331.8919454345696
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            36
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Esheep-Midjourney-Prompt"
+      },
+      "widgets_values": [
+        "a woman standing on top of a beach next to a dragon, pixiv contest winner, fantasy art, phone wallpaper, portrait of a sacred serpent, a dragon made of clouds, in the style of ross tran, details, sleek dragon head --v 5 --s 500 --ar 9:16 --chaos 9 --v"
+      ],
+      "serialize_values": [
+        "a woman standing on top of a beach next to a dragon, pixiv contest winner, fantasy art, phone wallpaper, portrait of a sacred serpent, a dragon made of clouds, in the style of ross tran, details, sleek dragon head --v 5 --s 500 --ar 9:16 --chaos 9 --v"
+      ]
+    },
+    {
+      "id": 88,
+      "type": "Note",
+      "pos": [
+        212.49498303561984,
+        1589.8919454345696
+      ],
+      "size": [
+        576.2913735129591,
+        249.87046368009055
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "title": "prompt website",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n  1.https://promptheroes.cn/\n\n  2.https://promptfolder.com/midjourney-prompt-helper/\n\n  3.https://lib.kalos.art/\n\n  4.https://moonvy.com/apps/ops/ 提示词查看工具\n\n  5.https://www.xiguama.com/prompt.html 生成关键词"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 104,
+      "type": "ImageScaleBy",
+      "pos": [
+        1537,
+        1345
+      ],
+      "size": [
+        211.65113598788957,
+        82
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 54,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            55
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleBy"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        0.5
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 89,
+      "type": "SetNode",
+      "pos": [
+        1763,
+        1345
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 55,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_MidjurneyImage",
+      "properties": {
+        "previousName": "MidjurneyImage"
+      },
+      "widgets_values": [
+        "MidjurneyImage"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 87,
+      "type": "PreviewImage",
+      "pos": [
+        1029,
+        1334
+      ],
+      "size": [
+        481.5484681286116,
+        606.5438317100034
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 37,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 86,
+      "type": "Esheep_Split_Image",
+      "pos": [
+        670.4949830356194,
+        1332.8919454345696
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 36,
+          "label": "images"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            37,
+            54
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Esheep_Split_Image"
+      },
+      "widgets_values": [
+        2,
+        2
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 105,
+      "type": "Note",
+      "pos": [
+        1535,
+        1467
+      ],
+      "size": [
+        276.6039132362473,
+        128.24114104691648
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n\n   缩放图片，防止svd在网站运行爆显存"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      36,
+      85,
+      0,
+      86,
+      0,
+      "IMAGE"
+    ],
+    [
+      37,
+      86,
+      0,
+      87,
+      0,
+      "IMAGE"
+    ],
+    [
+      54,
+      86,
+      0,
+      104,
+      0,
+      "IMAGE"
+    ],
+    [
+      55,
+      104,
+      0,
+      89,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Group",
+      "bounding": [
+        62,
+        57,
+        3162,
+        1165
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        62,
+        1230,
+        1924,
+        740
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

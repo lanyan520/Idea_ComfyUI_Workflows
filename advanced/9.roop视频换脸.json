@@ -1,0 +1,1124 @@
+{
+  "last_node_id": 234,
+  "last_link_id": 1786,
+  "nodes": [
+    {
+      "id": 196,
+      "type": "SetNode",
+      "pos": [
+        1732.6758623724152,
+        953.6517244499523
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 1744,
+          "label": "IMAGE"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_FaceImage",
+      "properties": {
+        "previousName": "FaceImage"
+      },
+      "widgets_values": [
+        "FaceImage"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 176,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        2700.6758623724163,
+        924.6517244499523
+      ],
+      "size": [
+        297.3240966796875,
+        745.2428385416667
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1747,
+          "label": "images",
+          "slot_index": 0
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null,
+          "label": "audio"
+        },
+        {
+          "name": "frame_rate",
+          "type": "INT",
+          "link": 1751,
+          "widget": {
+            "name": "frame_rate"
+          },
+          "label": "frame_rate"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3,
+          "label": "Filenames"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 12,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "https://boss.aikobo.cn/aigc-public/0579de678998e85055f3873c0f7a71a9422ae19b9010e8c2a1c50ebc304d67cb.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/mp4"
+          }
+        }
+      },
+      "serialize_values": [
+        null,
+        null,
+        "AnimateDiff",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 205,
+      "type": "GetNode",
+      "pos": [
+        2507.6758623724163,
+        994.6517244499523
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1751
+          ],
+          "slot_index": 0,
+          "label": "INT"
+        }
+      ],
+      "title": "Get_Rate",
+      "properties": {},
+      "widgets_values": [
+        "Rate"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 203,
+      "type": "SetNode",
+      "pos": [
+        1565.4335492864102,
+        517.4022176979151
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "link": 1749,
+          "label": "INT",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_LoadMaxFrames",
+      "properties": {
+        "previousName": "LoadMaxFrames"
+      },
+      "widgets_values": [
+        "LoadMaxFrames"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 202,
+      "type": "SetNode",
+      "pos": [
+        1575.4335492864102,
+        403.4022176979154
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "link": 1748,
+          "label": "INT",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_Rate",
+      "properties": {
+        "previousName": "Rate"
+      },
+      "widgets_values": [
+        "Rate"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 208,
+      "type": "SetNode",
+      "pos": [
+        1567.4335492864102,
+        624.4022176979151
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "link": 1753,
+          "label": "INT",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_ScaleWidth",
+      "properties": {
+        "previousName": "ScaleWidth"
+      },
+      "widgets_values": [
+        "ScaleWidth"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 197,
+      "type": "GetNode",
+      "pos": [
+        2459.6758623724163,
+        952.6517244499523
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1747
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_ResultImages",
+      "properties": {},
+      "widgets_values": [
+        "ResultImages"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 167,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        1896.6758623724152,
+        923.6517244499523
+      ],
+      "size": [
+        307.1084899902344,
+        714.6373155381945
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "frame_load_cap",
+          "type": "INT",
+          "link": 1750,
+          "widget": {
+            "name": "frame_load_cap"
+          },
+          "slot_index": 0,
+          "label": "frame_load_cap"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1722,
+            1755
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "frame_count"
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3,
+          "label": "audio"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/ce1ddc5e030f2288f702f8ff99507f9880730936.quicktime",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 12,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/ce1ddc5e030f2288f702f8ff99507f9880730936.quicktime",
+            "type": "input",
+            "format": "video/quicktime",
+            "frame_load_cap": 12,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "select_every_nth": 1
+          }
+        }
+      },
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 211,
+      "type": "ImageScale",
+      "pos": [
+        2244.675862372416,
+        952.6517244499523
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1755,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1756
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        540,
+        960,
+        "disabled"
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 198,
+      "type": "SetNode",
+      "pos": [
+        2247.675862372416,
+        995.6517244499523
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 1756,
+          "label": "IMAGE"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_VideoImages",
+      "properties": {
+        "previousName": "VideoImages"
+      },
+      "widgets_values": [
+        "VideoImages"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 209,
+      "type": "SetNode",
+      "pos": [
+        1567.2996980301043,
+        734.8964581730396
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "link": 1752,
+          "label": "INT",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_ScaleHeight",
+      "properties": {
+        "previousName": "ScaleHeight"
+      },
+      "widgets_values": [
+        "ScaleHeight"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 195,
+      "type": "LoadImage",
+      "pos": [
+        1285.3035586018004,
+        924.5813924390475
+      ],
+      "size": {
+        "0": 407.56488037109375,
+        "1": 665.73046875
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1744
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/63d4111996367f11b40e141ff35127149c0f920e.jpg",
+        "image"
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 204,
+      "type": "GetNode",
+      "pos": [
+        1706.3035586018004,
+        999.5813924390475
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1750
+          ],
+          "slot_index": 0,
+          "label": "INT"
+        }
+      ],
+      "title": "Get_LoadMaxFrames",
+      "properties": {},
+      "widgets_values": [
+        "LoadMaxFrames"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 234,
+      "type": "GetNode",
+      "pos": [
+        1869.6927503685647,
+        595.4097742618386
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1786
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_VideoImages",
+      "properties": {},
+      "widgets_values": [
+        "VideoImages"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 233,
+      "type": "GetNode",
+      "pos": [
+        1876.6927503685647,
+        660.4097742618386
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1782
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_FaceImage",
+      "properties": {},
+      "widgets_values": [
+        "FaceImage"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 231,
+      "type": "roop",
+      "pos": [
+        2086.6927503685647,
+        583.4097742618386
+      ],
+      "size": {
+        "0": 315,
+        "1": 150
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1786,
+          "label": "image",
+          "slot_index": 0
+        },
+        {
+          "name": "reference_image",
+          "type": "IMAGE",
+          "link": 1782,
+          "label": "reference_image",
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1784
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "roop"
+      },
+      "widgets_values": [
+        "inswapper_128.onnx",
+        "0",
+        "0",
+        0
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 199,
+      "type": "SetNode",
+      "pos": [
+        2475.6927503685647,
+        612.4097742618386
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 1784,
+          "label": "IMAGE"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_ResultImages",
+      "properties": {
+        "previousName": "ResultImages"
+      },
+      "widgets_values": [
+        "ResultImages"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 207,
+      "type": "Integer",
+      "pos": [
+        1251.2996980301036,
+        705.8964581730396
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1752
+          ],
+          "shape": 3,
+          "label": "INT",
+          "slot_index": 0
+        }
+      ],
+      "title": "ScaleHeight",
+      "properties": {
+        "Node name for S&R": "Integer"
+      },
+      "widgets_values": [
+        960
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 206,
+      "type": "Integer",
+      "pos": [
+        1254.2996980301036,
+        594.8964581730394
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1753
+          ],
+          "shape": 3,
+          "label": "INT",
+          "slot_index": 0
+        }
+      ],
+      "title": "ScaleWidth",
+      "properties": {
+        "Node name for S&R": "Integer"
+      },
+      "widgets_values": [
+        540
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 201,
+      "type": "Integer",
+      "pos": [
+        1255.2996980301036,
+        487.89645817303926
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1749
+          ],
+          "shape": 3,
+          "label": "INT"
+        }
+      ],
+      "title": "frame_load_cap",
+      "properties": {
+        "Node name for S&R": "Integer"
+      },
+      "widgets_values": [
+        6
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 200,
+      "type": "Integer",
+      "pos": [
+        1254.2996980301036,
+        372.89645817303926
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1748
+          ],
+          "shape": 3,
+          "label": "INT"
+        }
+      ],
+      "title": "frame_rate",
+      "properties": {
+        "Node name for S&R": "Integer"
+      },
+      "widgets_values": [
+        6
+      ],
+      "serialize_values": [
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      1722,
+      167,
+      0,
+      76,
+      1,
+      "IMAGE"
+    ],
+    [
+      1744,
+      195,
+      0,
+      196,
+      0,
+      "*"
+    ],
+    [
+      1747,
+      197,
+      0,
+      176,
+      0,
+      "IMAGE"
+    ],
+    [
+      1748,
+      200,
+      0,
+      202,
+      0,
+      "*"
+    ],
+    [
+      1749,
+      201,
+      0,
+      203,
+      0,
+      "*"
+    ],
+    [
+      1750,
+      204,
+      0,
+      167,
+      0,
+      "INT"
+    ],
+    [
+      1751,
+      205,
+      0,
+      176,
+      2,
+      "INT"
+    ],
+    [
+      1752,
+      207,
+      0,
+      209,
+      0,
+      "*"
+    ],
+    [
+      1753,
+      206,
+      0,
+      208,
+      0,
+      "*"
+    ],
+    [
+      1755,
+      167,
+      0,
+      211,
+      0,
+      "IMAGE"
+    ],
+    [
+      1756,
+      211,
+      0,
+      198,
+      0,
+      "IMAGE"
+    ],
+    [
+      1782,
+      233,
+      0,
+      231,
+      1,
+      "IMAGE"
+    ],
+    [
+      1784,
+      231,
+      0,
+      199,
+      0,
+      "IMAGE"
+    ],
+    [
+      1786,
+      234,
+      0,
+      231,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Group",
+      "bounding": [
+        1766,
+        467,
+        920,
+        322
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        1204,
+        793,
+        1899,
+        921
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        1206,
+        248,
+        555,
+        539
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

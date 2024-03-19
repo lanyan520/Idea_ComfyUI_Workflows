@@ -1,0 +1,2658 @@
+{
+  "last_node_id": 277,
+  "last_link_id": 636,
+  "nodes": [
+    {
+      "id": 265,
+      "type": "SetNode",
+      "pos": [
+        1534.6548840227797,
+        54.812742218069715
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 631,
+          "label": "IMAGE"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_VideoImages",
+      "properties": {
+        "previousName": "VideoImages"
+      },
+      "widgets_values": [
+        "VideoImages"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 248,
+      "type": "AnimeLineArtPreprocessor",
+      "pos": [
+        2636.5816776245742,
+        909.799296961028
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 618,
+          "name": "image",
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            583
+          ],
+          "name": "IMAGE",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AnimeLineArtPreprocessor"
+      },
+      "widgets_values": [
+        768
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 267,
+      "type": "GetNode",
+      "pos": [
+        2450.5816776245742,
+        911.7992969610284
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            618
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_VideoImages",
+      "properties": {},
+      "widgets_values": [
+        "VideoImages"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 197,
+      "type": "ControlNetApplyAdvanced",
+      "pos": [
+        2839.5816776245742,
+        790.7992969610293
+      ],
+      "size": {
+        "0": 330.12347412109375,
+        "1": 166
+      },
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 550,
+          "name": "positive",
+          "type": "CONDITIONING",
+          "label": "正面提示词"
+        },
+        {
+          "link": 551,
+          "name": "negative",
+          "type": "CONDITIONING",
+          "label": "负面提示词"
+        },
+        {
+          "link": 441,
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "label": "ControlNet"
+        },
+        {
+          "link": 583,
+          "name": "image",
+          "slot_index": 3,
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            620
+          ],
+          "name": "positive",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "CONDITIONING",
+          "label": "正面提示词"
+        },
+        {
+          "links": [
+            621
+          ],
+          "name": "negative",
+          "shape": 3,
+          "slot_index": 1,
+          "type": "CONDITIONING",
+          "label": "负面提示词"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApplyAdvanced"
+      },
+      "widgets_values": [
+        0.15,
+        0,
+        0.8
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 269,
+      "type": "SetNode",
+      "pos": [
+        3241.6142139368553,
+        822.1615455571434
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 620,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_ControlNetPrompt",
+      "properties": {
+        "previousName": "ControlNetPrompt"
+      },
+      "widgets_values": [
+        "ControlNetPrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 270,
+      "type": "SetNode",
+      "pos": [
+        3236.6142139368553,
+        871.1615455571425
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 621,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_ControlNetNegativePrompt",
+      "properties": {
+        "previousName": "ControlNetNegativePrompt"
+      },
+      "widgets_values": [
+        "ControlNetNegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 271,
+      "type": "GetNode",
+      "pos": [
+        3710.548250611425,
+        813.7618875905237
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            622
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_ControlNetPrompt",
+      "properties": {},
+      "widgets_values": [
+        "ControlNetPrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 108,
+      "type": "CLIPSetLastLayer",
+      "pos": [
+        108.17407414539666,
+        1143.3374224574677
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 601,
+          "name": "clip",
+          "type": "CLIP",
+          "label": "CLIP"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            603
+          ],
+          "name": "CLIP",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "CLIP",
+          "label": "CLIP"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPSetLastLayer"
+      },
+      "widgets_values": [
+        -2
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 2,
+      "type": "VAELoader",
+      "pos": [
+        96.17407414539667,
+        1241.3374224574684
+      ],
+      "size": {
+        "0": 321.3172912597656,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "links": [
+            602
+          ],
+          "name": "VAE",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "VAE",
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "kl-f8-anime2@df3c506e51.ckpt"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 94,
+      "type": "ADE_AnimateDiffUniformContextOptions",
+      "pos": [
+        468.81717721996756,
+        822.4187630308045
+      ],
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "links": [
+            279
+          ],
+          "name": "CONTEXT_OPTIONS",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "CONTEXT_OPTIONS",
+          "label": "上下文设置"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_AnimateDiffUniformContextOptions"
+      },
+      "widgets_values": [
+        16,
+        1,
+        4,
+        "uniform",
+        false
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 260,
+      "type": "Anything Everywhere3",
+      "pos": [
+        564.817177219966,
+        1117.4187630308058
+      ],
+      "size": {
+        "0": 210,
+        "1": 66
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MODEL",
+          "type": "*",
+          "link": 625,
+          "label": "anything",
+          "color_on": "#B39DDB"
+        },
+        {
+          "name": "CLIP",
+          "type": "*",
+          "link": 603,
+          "label": "anything2",
+          "color_on": "#FFD500"
+        },
+        {
+          "name": "VAE",
+          "type": "*",
+          "link": 602,
+          "label": "anything3",
+          "color_on": "#FF6E6E"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Anything Everywhere3",
+        "group_restricted": false,
+        "color_restricted": false
+      }
+    },
+    {
+      "id": 272,
+      "type": "GetNode",
+      "pos": [
+        3683.548250611425,
+        858.7618875905238
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            623
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_ControlNetNegativePrompt",
+      "properties": {},
+      "widgets_values": [
+        "ControlNetNegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 56,
+      "type": "VAEEncode",
+      "pos": [
+        3760.548250611425,
+        909.7618875905239
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 619,
+          "name": "pixels",
+          "type": "IMAGE",
+          "label": "图像"
+        },
+        {
+          "link": null,
+          "name": "vae",
+          "type": "VAE",
+          "label": "VAE"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            465
+          ],
+          "name": "LATENT",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "LATENT",
+          "label": "Latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      }
+    },
+    {
+      "id": 268,
+      "type": "GetNode",
+      "pos": [
+        3575.548250611425,
+        912.7618875905239
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            619
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_VideoImages",
+      "properties": {},
+      "widgets_values": [
+        "VideoImages"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 10,
+      "type": "VAEDecode",
+      "pos": [
+        4408.548250611415,
+        782.7618875905235
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 9,
+          "name": "samples",
+          "type": "LATENT",
+          "label": "Latent"
+        },
+        {
+          "link": null,
+          "name": "vae",
+          "type": "VAE",
+          "label": "VAE"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            225
+          ],
+          "name": "IMAGE",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 107,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        4686.548250611416,
+        781.7618875905235
+      ],
+      "size": [
+        320,
+        270
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 225,
+          "name": "images",
+          "type": "IMAGE",
+          "label": "图像"
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3,
+          "label": "Filenames"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 16,
+        "loop_count": 0,
+        "filename_prefix": "WaterMage",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "params": {
+            "file_url": "https://bxcepvtdinrmeluohsji.supabase.co/storage/v1/object/sign/user-storage/outputs/de91a349-2a57-413f-99c3-9b7093677480/01HMZXBARGJE5ZZJ5Z7P2BSJZK/WaterMage_00002.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ1c2VyLXN0b3JhZ2Uvb3V0cHV0cy9kZTkxYTM0OS0yYTU3LTQxM2YtOTljMy05YjcwOTM2Nzc0ODAvMDFITVpYQkFSR0pFNVpaSjVaN1AyQlNKWksvV2F0ZXJNYWdlXzAwMDAyLm1wNCIsImlhdCI6MTcwNjE3Mjk4NCwiZXhwIjoxNzA2MTc2NTg0fQ.-Zv7iEjm1FrKNcKp4ckw1m-tAw8_bVpOaWSqTzccXtI",
+            "filename": "WaterMage_00002.mp4",
+            "format": "video/h264-mp4",
+            "subfolder": "",
+            "type": "output"
+          },
+          "paused": false
+        }
+      },
+      "serialize_values": [
+        null,
+        null,
+        "WaterMage",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 7,
+      "type": "KSampler",
+      "pos": [
+        3993.548250611425,
+        780.7618875905235
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": null,
+          "name": "model",
+          "type": "MODEL",
+          "label": "模型"
+        },
+        {
+          "link": 622,
+          "name": "positive",
+          "type": "CONDITIONING",
+          "label": "正面提示词"
+        },
+        {
+          "link": 623,
+          "name": "negative",
+          "type": "CONDITIONING",
+          "label": "负面提示词"
+        },
+        {
+          "link": 465,
+          "name": "latent_image",
+          "type": "LATENT",
+          "label": "Latent"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            9,
+            626
+          ],
+          "name": "LATENT",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "LATENT",
+          "label": "Latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        572398587887769,
+        "fixed",
+        30,
+        7.5,
+        "dpmpp_2m",
+        "karras",
+        1
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 273,
+      "type": "SetNode",
+      "pos": [
+        4317.548250611417,
+        874.7618875905238
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "link": 626,
+          "label": "LATENT"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_FirstLatent",
+      "properties": {
+        "previousName": "FirstLatent"
+      },
+      "widgets_values": [
+        "FirstLatent"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 170,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        5434.165571076635,
+        805.7572131923622
+      ],
+      "size": {
+        "0": 269.586669921875,
+        "1": 58
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "outputs": [
+        {
+          "links": [
+            360
+          ],
+          "name": "UPSCALE_MODEL",
+          "shape": 3,
+          "type": "UPSCALE_MODEL",
+          "label": "放大模型"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4x-AnimeSharp.pth"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 179,
+      "type": "VAEDecode",
+      "pos": [
+        5442.165571076635,
+        908.7572131923622
+      ],
+      "size": {
+        "0": 255.80233764648438,
+        "1": 46
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 4,
+      "inputs": [
+        {
+          "link": 627,
+          "name": "samples",
+          "type": "LATENT",
+          "label": "Latent"
+        },
+        {
+          "link": null,
+          "name": "vae",
+          "type": "VAE",
+          "label": "VAE"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            383
+          ],
+          "name": "IMAGE",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 171,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        5729.165571076635,
+        855.7572131923622
+      ],
+      "size": {
+        "0": 241.79998779296875,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 29,
+      "mode": 4,
+      "inputs": [
+        {
+          "link": 360,
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "label": "放大模型"
+        },
+        {
+          "link": 383,
+          "name": "image",
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            387
+          ],
+          "name": "IMAGE",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      }
+    },
+    {
+      "id": 274,
+      "type": "GetNode",
+      "pos": [
+        5270.165571076635,
+        938.7572131923622
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 4,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            627
+          ],
+          "slot_index": 0,
+          "label": "LATENT"
+        }
+      ],
+      "title": "Get_FirstLatent",
+      "properties": {},
+      "widgets_values": [
+        "FirstLatent"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 182,
+      "type": "ImageScale",
+      "pos": [
+        6000.165571076635,
+        855.7572131923622
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 36,
+      "mode": 4,
+      "inputs": [
+        {
+          "link": 387,
+          "name": "image",
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            388
+          ],
+          "name": "IMAGE",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "bilinear",
+        1080,
+        1920,
+        "disabled"
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 181,
+      "type": "VAEEncode",
+      "pos": [
+        6323.165571076635,
+        969.7572131923622
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 41,
+      "mode": 4,
+      "inputs": [
+        {
+          "link": 388,
+          "name": "pixels",
+          "type": "IMAGE",
+          "label": "图像"
+        },
+        {
+          "link": null,
+          "name": "vae",
+          "type": "VAE",
+          "label": "VAE"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            386
+          ],
+          "name": "LATENT",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "LATENT",
+          "label": "Latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      }
+    },
+    {
+      "id": 275,
+      "type": "GetNode",
+      "pos": [
+        6326.165571076635,
+        928.7572131923622
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 4,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            628
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_ControlNetNegativePrompt",
+      "properties": {},
+      "widgets_values": [
+        "ControlNetNegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 276,
+      "type": "GetNode",
+      "pos": [
+        6326.165571076635,
+        888.7572131923622
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 4,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            629
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_ControlNetPrompt",
+      "properties": {},
+      "widgets_values": [
+        "ControlNetPrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 174,
+      "type": "KSampler",
+      "pos": [
+        6600.165571076637,
+        882.7572131923622
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 42,
+      "mode": 4,
+      "inputs": [
+        {
+          "link": null,
+          "name": "model",
+          "slot_index": 0,
+          "type": "MODEL",
+          "label": "模型"
+        },
+        {
+          "link": 629,
+          "name": "positive",
+          "slot_index": 1,
+          "type": "CONDITIONING",
+          "label": "正面提示词"
+        },
+        {
+          "link": 628,
+          "name": "negative",
+          "slot_index": 2,
+          "type": "CONDITIONING",
+          "label": "负面提示词"
+        },
+        {
+          "link": 386,
+          "name": "latent_image",
+          "type": "LATENT",
+          "label": "Latent"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            368
+          ],
+          "name": "LATENT",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "LATENT",
+          "label": "Latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        572398587887769,
+        "randomize",
+        25,
+        7.5,
+        "dpmpp_2m",
+        "karras",
+        0.25
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 175,
+      "type": "VAEDecode",
+      "pos": [
+        6956.165571076637,
+        883.7572131923622
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 43,
+      "mode": 4,
+      "inputs": [
+        {
+          "link": 368,
+          "name": "samples",
+          "type": "LATENT",
+          "label": "Latent"
+        },
+        {
+          "link": null,
+          "name": "vae",
+          "type": "VAE",
+          "label": "VAE"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            371
+          ],
+          "name": "IMAGE",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 176,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        7211.165571076637,
+        882.7572131923622
+      ],
+      "size": [
+        315,
+        270
+      ],
+      "flags": {},
+      "order": 44,
+      "mode": 4,
+      "inputs": [
+        {
+          "link": 371,
+          "name": "images",
+          "type": "IMAGE",
+          "label": "图像"
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3,
+          "label": "Filenames"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 16,
+        "loop_count": 0,
+        "filename_prefix": "WaterMageUpscaled",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "params": {
+            "filename": "VideoA_00001.mov",
+            "format": "video/ProRes",
+            "subfolder": "20231130\\Nike_Fogo_211499719168298",
+            "type": "output"
+          },
+          "paused": true
+        }
+      },
+      "serialize_values": [
+        null,
+        null,
+        "WaterMageUpscaled",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 130,
+      "type": "ControlNetApplyAdvanced",
+      "pos": [
+        1879.614213936855,
+        794.1615455571437
+      ],
+      "size": {
+        "0": 368.1403503417969,
+        "1": 166
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 614,
+          "name": "positive",
+          "type": "CONDITIONING",
+          "label": "正面提示词"
+        },
+        {
+          "link": 615,
+          "name": "negative",
+          "type": "CONDITIONING",
+          "label": "负面提示词"
+        },
+        {
+          "link": 541,
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "label": "ControlNet"
+        },
+        {
+          "link": 617,
+          "name": "image",
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            550
+          ],
+          "name": "positive",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "CONDITIONING",
+          "label": "正面提示词"
+        },
+        {
+          "links": [
+            551
+          ],
+          "name": "negative",
+          "shape": 3,
+          "slot_index": 1,
+          "type": "CONDITIONING",
+          "label": "负面提示词"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApplyAdvanced"
+      },
+      "widgets_values": [
+        0.02,
+        0,
+        0.8
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 263,
+      "type": "GetNode",
+      "pos": [
+        1681.6142139368496,
+        809.1615455571437
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            614
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_Prompt",
+      "properties": {},
+      "widgets_values": [
+        "Prompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 264,
+      "type": "GetNode",
+      "pos": [
+        1629.6142139368496,
+        855.161545557143
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            615
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_NegativePrompt",
+      "properties": {},
+      "widgets_values": [
+        "NegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 266,
+      "type": "GetNode",
+      "pos": [
+        1643.6142139368496,
+        942.1615455571426
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            617
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_VideoImages",
+      "properties": {},
+      "widgets_values": [
+        "VideoImages"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimpleWithNoiseSelect",
+      "pos": [
+        110.82329029239035,
+        770.1293355158721
+      ],
+      "size": {
+        "0": 319.20001220703125,
+        "1": 170
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "outputs": [
+        {
+          "links": [
+            586
+          ],
+          "name": "MODEL",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "MODEL",
+          "label": "模型"
+        },
+        {
+          "links": [
+            600
+          ],
+          "name": "CLIP",
+          "shape": 3,
+          "slot_index": 1,
+          "type": "CLIP",
+          "label": "CLIP"
+        },
+        {
+          "links": [],
+          "name": "VAE",
+          "shape": 3,
+          "slot_index": 2,
+          "type": "VAE",
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimpleWithNoiseSelect"
+      },
+      "widgets_values": [
+        "helloYoung25d(1.0)",
+        "sqrt_linear (AnimateDiff)",
+        false,
+        0.18215
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        "2499_4033_4743@66e7645b65.safetensors",
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 240,
+      "type": "LoraLoader",
+      "pos": [
+        109.82329029239035,
+        977.1293355158726
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 586,
+          "name": "model",
+          "type": "MODEL",
+          "label": "模型"
+        },
+        {
+          "link": 600,
+          "name": "clip",
+          "type": "CLIP",
+          "label": "CLIP"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            624
+          ],
+          "name": "MODEL",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "MODEL",
+          "label": "模型"
+        },
+        {
+          "links": [
+            601
+          ],
+          "name": "CLIP",
+          "shape": 3,
+          "slot_index": 1,
+          "type": "CLIP",
+          "label": "CLIP"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "Add More Details - Detail Enhancer / Twe(v1)",
+        0.25,
+        0.25
+      ],
+      "serialize_values": [
+        "3402_5137_6006@d9cf2f88de.safetensors",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 93,
+      "type": "ADE_AnimateDiffLoaderWithContext",
+      "pos": [
+        461.81717721996756,
+        866.4187630308046
+      ],
+      "size": {
+        "0": 315,
+        "1": 210
+      },
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 624,
+          "name": "model",
+          "type": "MODEL",
+          "label": "模型"
+        },
+        {
+          "link": 279,
+          "name": "context_options",
+          "slot_index": 1,
+          "type": "CONTEXT_OPTIONS",
+          "label": "上下文设置"
+        },
+        {
+          "link": null,
+          "name": "motion_lora",
+          "type": "MOTION_LORA",
+          "label": "动态LoRA"
+        },
+        {
+          "link": null,
+          "name": "motion_model_settings",
+          "type": "MOTION_MODEL_SETTINGS",
+          "label": "动态模型设置"
+        },
+        {
+          "name": "sample_settings",
+          "type": "sample_settings",
+          "link": null,
+          "label": "sample_settings"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            625
+          ],
+          "name": "MODEL",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "MODEL",
+          "label": "模型"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_AnimateDiffLoaderWithContext"
+      },
+      "widgets_values": [
+        "temporaldiff-v1-animatediff.ckpt",
+        "sqrt_linear (AnimateDiff)",
+        1,
+        false
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 3,
+      "type": "CLIPTextEncode",
+      "pos": [
+        864.8195163629828,
+        777.7148456690059
+      ],
+      "size": {
+        "0": 404.796630859375,
+        "1": 170.8128662109375
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": null,
+          "name": "clip",
+          "type": "CLIP",
+          "label": "CLIP"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            611
+          ],
+          "name": "CONDITIONING",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "CONDITIONING",
+          "label": "条件"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "(best quality, masterpiece, slow motion), nice motion, nice lighting, thunder vfx, anime thunder vfx, thunder moviments, electricity spark particles, electricity flow, lightning vfx, cold palette, depth of field, cool purple background"
+      ],
+      "color": "#232",
+      "bgcolor": "#353",
+      "serialize_values": [
+        "(best quality, masterpiece, slow motion), nice motion, nice lighting, thunder vfx, anime thunder vfx, thunder moviments, electricity spark particles, electricity flow, lightning vfx, cold palette, depth of field, cool purple background"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        867.8195163629828,
+        987.7148456690052
+      ],
+      "size": {
+        "0": 391.9866943359375,
+        "1": 99.2276611328125
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": null,
+          "name": "clip",
+          "type": "CLIP",
+          "label": "CLIP"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            610
+          ],
+          "name": "CONDITIONING",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "CONDITIONING",
+          "label": "条件"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "embedding:EasyNegativeV2, embedding:ng_deepnegative_v1_75t, "
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        "embedding:EasyNegativeV2, embedding:ng_deepnegative_v1_75t, "
+      ]
+    },
+    {
+      "id": 129,
+      "type": "ControlNetLoaderAdvanced",
+      "pos": [
+        1517.5290916354725,
+        895.2248538045585
+      ],
+      "size": {
+        "0": 327.6000061035156,
+        "1": 62.817440032958984
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": null,
+          "name": "timestep_keyframe",
+          "type": "TIMESTEP_KEYFRAME",
+          "label": "帧间隔"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            541
+          ],
+          "name": "CONTROL_NET",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "CONTROL_NET",
+          "label": "ControlNet"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoaderAdvanced"
+      },
+      "widgets_values": [
+        "control_v1p_sd15_qrcode_monster_v2.safetensors"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 198,
+      "type": "ControlNetLoaderAdvanced",
+      "pos": [
+        2476.9998779296875,
+        862.4605530740942
+      ],
+      "size": {
+        "0": 327.6000061035156,
+        "1": 58.93163299560547
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": null,
+          "name": "timestep_keyframe",
+          "type": "TIMESTEP_KEYFRAME",
+          "label": "帧间隔"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            441
+          ],
+          "name": "CONTROL_NET",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "CONTROL_NET",
+          "label": "ControlNet"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoaderAdvanced"
+      },
+      "widgets_values": [
+        "control_v11p_sd15s2_lineart_anime.pth"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 261,
+      "type": "SetNode",
+      "pos": [
+        1310.0394776211526,
+        807.8910549633275
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 611,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_Prompt",
+      "properties": {
+        "previousName": "Prompt"
+      },
+      "widgets_values": [
+        "Prompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 262,
+      "type": "SetNode",
+      "pos": [
+        1293.0394776211526,
+        1017.8910549633275
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 610,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_NegativePrompt",
+      "properties": {
+        "previousName": "NegativePrompt"
+      },
+      "widgets_values": [
+        "NegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 259,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        879.6548840227923,
+        21.812742218070028
+      ],
+      "size": [
+        235.1999969482422,
+        610.7999945746528
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            630
+          ],
+          "shape": 3,
+          "label": "图像",
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "帧计数"
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3,
+          "label": "audio"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/44aa762001a67efc81d5d2be37d0b0ecd39c70a5.quicktime",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 16,
+        "skip_first_frames": 6,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 16,
+            "skip_first_frames": 6,
+            "force_rate": 0,
+            "select_every_nth": 1,
+            "filename": "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/44aa762001a67efc81d5d2be37d0b0ecd39c70a5.quicktime",
+            "type": "input",
+            "format": "video/quicktime"
+          }
+        }
+      },
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 277,
+      "type": "ImageScaleBy",
+      "pos": [
+        1161,
+        199
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 630,
+          "label": "图像"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            631
+          ],
+          "shape": 3,
+          "label": "图像",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleBy"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        0.5
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 53,
+      "type": "ImageScale",
+      "pos": [
+        1157,
+        24
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": null,
+          "name": "image",
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [],
+          "name": "IMAGE",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "IMAGE",
+          "label": "图像"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        576,
+        1024,
+        "center"
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      9,
+      7,
+      0,
+      10,
+      0,
+      "LATENT"
+    ],
+    [
+      225,
+      10,
+      0,
+      107,
+      0,
+      "IMAGE"
+    ],
+    [
+      279,
+      94,
+      0,
+      93,
+      1,
+      "CONTEXT_OPTIONS"
+    ],
+    [
+      360,
+      170,
+      0,
+      171,
+      0,
+      "UPSCALE_MODEL"
+    ],
+    [
+      368,
+      174,
+      0,
+      175,
+      0,
+      "LATENT"
+    ],
+    [
+      371,
+      175,
+      0,
+      176,
+      0,
+      "IMAGE"
+    ],
+    [
+      383,
+      179,
+      0,
+      171,
+      1,
+      "IMAGE"
+    ],
+    [
+      386,
+      181,
+      0,
+      174,
+      3,
+      "LATENT"
+    ],
+    [
+      387,
+      171,
+      0,
+      182,
+      0,
+      "IMAGE"
+    ],
+    [
+      388,
+      182,
+      0,
+      181,
+      0,
+      "IMAGE"
+    ],
+    [
+      441,
+      198,
+      0,
+      197,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      465,
+      56,
+      0,
+      7,
+      3,
+      "LATENT"
+    ],
+    [
+      541,
+      129,
+      0,
+      130,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      550,
+      130,
+      0,
+      197,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      551,
+      130,
+      1,
+      197,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      583,
+      248,
+      0,
+      197,
+      3,
+      "IMAGE"
+    ],
+    [
+      586,
+      1,
+      0,
+      240,
+      0,
+      "MODEL"
+    ],
+    [
+      600,
+      1,
+      1,
+      240,
+      1,
+      "CLIP"
+    ],
+    [
+      601,
+      240,
+      1,
+      108,
+      0,
+      "CLIP"
+    ],
+    [
+      602,
+      2,
+      0,
+      260,
+      2,
+      "*"
+    ],
+    [
+      603,
+      108,
+      0,
+      260,
+      1,
+      "*"
+    ],
+    [
+      610,
+      6,
+      0,
+      262,
+      0,
+      "*"
+    ],
+    [
+      611,
+      3,
+      0,
+      261,
+      0,
+      "*"
+    ],
+    [
+      614,
+      263,
+      0,
+      130,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      615,
+      264,
+      0,
+      130,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      617,
+      266,
+      0,
+      130,
+      3,
+      "IMAGE"
+    ],
+    [
+      618,
+      267,
+      0,
+      248,
+      0,
+      "IMAGE"
+    ],
+    [
+      619,
+      268,
+      0,
+      56,
+      0,
+      "IMAGE"
+    ],
+    [
+      620,
+      197,
+      0,
+      269,
+      0,
+      "*"
+    ],
+    [
+      621,
+      197,
+      1,
+      270,
+      0,
+      "*"
+    ],
+    [
+      622,
+      271,
+      0,
+      7,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      623,
+      272,
+      0,
+      7,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      624,
+      240,
+      0,
+      93,
+      0,
+      "MODEL"
+    ],
+    [
+      625,
+      93,
+      0,
+      260,
+      0,
+      "*"
+    ],
+    [
+      626,
+      7,
+      0,
+      273,
+      0,
+      "*"
+    ],
+    [
+      627,
+      274,
+      0,
+      179,
+      0,
+      "LATENT"
+    ],
+    [
+      628,
+      275,
+      0,
+      174,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      629,
+      276,
+      0,
+      174,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      630,
+      259,
+      0,
+      277,
+      0,
+      "IMAGE"
+    ],
+    [
+      631,
+      277,
+      0,
+      265,
+      0,
+      "IMAGE"
+    ],
+    [
+      632,
+      2,
+      0,
+      56,
+      1,
+      "VAE"
+    ],
+    [
+      633,
+      2,
+      0,
+      10,
+      1,
+      "VAE"
+    ],
+    [
+      634,
+      93,
+      0,
+      7,
+      0,
+      "MODEL"
+    ],
+    [
+      635,
+      108,
+      0,
+      3,
+      0,
+      "CLIP"
+    ],
+    [
+      636,
+      108,
+      0,
+      6,
+      0,
+      "CLIP"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Group",
+      "bounding": [
+        40,
+        648,
+        786,
+        1090
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        830,
+        648,
+        661,
+        1094
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        1498,
+        648,
+        2009,
+        1087
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        829,
+        -121,
+        937,
+        766
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        5185,
+        650,
+        2429,
+        1088
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        3511,
+        650,
+        1671,
+        1093
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

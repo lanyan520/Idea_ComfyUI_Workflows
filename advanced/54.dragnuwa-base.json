@@ -1,0 +1,309 @@
+{
+  "last_node_id": 17,
+  "last_link_id": 13,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "LoadImage",
+      "pos": [
+        102,
+        317
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/972d01e3d5bc6001adeb9656e2e5a31946380b8a.png@1536w_1536h_0e",
+        "image"
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 1,
+      "type": "Load CheckPoint DragNUWA",
+      "pos": [
+        104,
+        96
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "DragNUWA",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "model"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Load CheckPoint DragNUWA"
+      },
+      "widgets_values": [
+        "dragnuwa-svd-pruned.fp16.safetensors",
+        "320x576",
+        14
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 3,
+      "type": "PreviewImage",
+      "pos": [
+        951,
+        209
+      ],
+      "size": {
+        "0": 480.1522216796875,
+        "1": 635.4196166992188
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 6,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 7,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1482,
+        206
+      ],
+      "size": [
+        383.2716979980469,
+        837.8890563964843
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 7,
+          "label": "images"
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null,
+          "label": "audio"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3,
+          "label": "Filenames"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "image/gif",
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "https://boss.aikobo.cn/aigc-public/55d13364f77abb3b0362c264ae8cb63b97fc80c997acda07135835256246dc4b.gif",
+            "subfolder": "",
+            "type": "output",
+            "format": "image/gif"
+          }
+        }
+      },
+      "serialize_values": [
+        null,
+        null,
+        "AnimateDiff",
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 6,
+      "type": "DragNUWA Run",
+      "pos": [
+        491,
+        208
+      ],
+      "size": {
+        "0": 416.474365234375,
+        "1": 284.00494384765625
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "DragNUWA",
+          "link": 4,
+          "label": "model"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 5,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            6,
+            7
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DragNUWA Run"
+      },
+      "widgets_values": [
+        "[[[257,341],[205,347],[159,353],[96,362]],[[208,132],[150,137]],[[300,452],[262,458]]]",
+        1,
+        4,
+        false,
+        "X://path/to/optical_flow"
+      ],
+      "serialize_values": [
+        "[[[257,341],[205,347],[159,353],[96,362]],[[208,132],[150,137]],[[300,452],[262,458]]]",
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 16,
+      "type": "Note _O",
+      "pos": [
+        464,
+        40
+      ],
+      "size": {
+        "0": 542.7820434570312,
+        "1": 94.1441879272461
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "properties": {
+        "Node name for S&R": "Note _O"
+      },
+      "widgets_values": [
+        "\n    坐标点获取地址：\n    https://chaojie.github.io/ComfyUI-DragNUWA/tools/draw.html\n    生成速度特别慢，而且网站加载工作流运行容易报错"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        "\n    坐标点获取地址：\n    https:\n    生成速度特别慢，而且网站加载工作流运行容易报错"
+      ]
+    }
+  ],
+  "links": [
+    [
+      4,
+      1,
+      0,
+      6,
+      0,
+      "DragNUWA"
+    ],
+    [
+      5,
+      4,
+      0,
+      6,
+      1,
+      "IMAGE"
+    ],
+    [
+      6,
+      6,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      7,
+      6,
+      0,
+      7,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

@@ -1,0 +1,8280 @@
+{
+  "last_node_id": 210,
+  "last_link_id": 204,
+  "nodes": [
+    {
+      "id": 18,
+      "type": "CLIPSetLastLayer",
+      "pos": [
+        981.4292293047658,
+        93.29695286606305
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 88,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 19,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            20
+          ],
+          "shape": 3,
+          "label": "CLIP",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPSetLastLayer"
+      },
+      "widgets_values": [
+        -2
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 17,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        982.4292293047658,
+        -48.703047133936835
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            22
+          ],
+          "shape": 3,
+          "label": "MODEL",
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            19
+          ],
+          "shape": 3,
+          "label": "CLIP",
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            21
+          ],
+          "shape": 3,
+          "label": "VAE",
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "墨幽人造人XL(v0.1)"
+      ],
+      "serialize_values": [
+        "1656_3101_3690@a1c3c7e4ea.safetensors"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "Anything Everywhere3",
+      "pos": [
+        1119.429229304765,
+        -89.70304713393689
+      ],
+      "size": {
+        "0": 210,
+        "1": 66
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 118,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MODEL",
+          "type": "*",
+          "link": 22,
+          "label": "MODEL",
+          "color_on": "#B39DDB"
+        },
+        {
+          "name": "VAE",
+          "type": "*",
+          "link": 21,
+          "label": "VAE",
+          "color_on": "#FF6E6E"
+        },
+        {
+          "name": "CLIP",
+          "type": "*",
+          "link": 20,
+          "label": "CLIP",
+          "color_on": "#FFD500"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Anything Everywhere3",
+        "group_restricted": false,
+        "color_restricted": false
+      }
+    },
+    {
+      "id": 36,
+      "type": "GetNode",
+      "pos": [
+        1240,
+        590
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 1,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            33
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_FaceImage1",
+      "properties": {},
+      "widgets_values": [
+        "FaceImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 37,
+      "type": "GetNode",
+      "pos": [
+        1270,
+        640
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            34
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_Prompt",
+      "properties": {},
+      "widgets_values": [
+        "Prompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 38,
+      "type": "GetNode",
+      "pos": [
+        1220,
+        690
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            35
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_NegativePrompt",
+      "properties": {},
+      "widgets_values": [
+        "NegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 44,
+      "type": "GetNode",
+      "pos": [
+        2100,
+        550
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            40
+          ],
+          "slot_index": 0,
+          "label": "LATENT"
+        }
+      ],
+      "title": "Get_EmptyLatent",
+      "properties": {},
+      "widgets_values": [
+        "EmptyLatent"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 41,
+      "type": "KSamplerAdvanced //Inspire",
+      "pos": [
+        2300,
+        460
+      ],
+      "size": {
+        "0": 315,
+        "1": 450
+      },
+      "flags": {},
+      "order": 121,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 36,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 37,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 38,
+          "label": "negative"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 40,
+          "label": "latent_image"
+        },
+        {
+          "name": "noise_opt",
+          "type": "NOISE",
+          "link": null,
+          "label": "noise_opt"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            41
+          ],
+          "shape": 3,
+          "label": "LATENT",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced //Inspire"
+      },
+      "widgets_values": [
+        true,
+        465752300337845,
+        "randomize",
+        30,
+        8,
+        "dpmpp_2m_sde_gpu",
+        "karras",
+        0,
+        10000,
+        "GPU(=A1111)",
+        false,
+        "incremental",
+        0,
+        0
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 45,
+      "type": "VAEDecode",
+      "pos": [
+        2760,
+        460
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 140,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 41,
+          "label": "samples"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            42
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 46,
+      "type": "PreviewImage",
+      "pos": [
+        3110,
+        460
+      ],
+      "size": {
+        "0": 430.2962341308594,
+        "1": 668.9073486328125
+      },
+      "flags": {},
+      "order": 149,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 42,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 50,
+      "type": "Note",
+      "pos": [
+        1080,
+        800
+      ],
+      "size": {
+        "0": 317.780029296875,
+        "1": 120.40997314453125
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 2,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n     image_kps接入姿势参考图像\n  （注意：仅对面部周围姿势起效，与通常的 openpose 不同）"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 49,
+      "type": "GetNode",
+      "pos": [
+        1240,
+        750
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            44
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage1",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 29,
+      "type": "ApplyInstantIDAdvanced",
+      "pos": [
+        1550,
+        460
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 96,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "instantid",
+          "type": "INSTANTID",
+          "link": 102,
+          "label": "instantid",
+          "slot_index": 0
+        },
+        {
+          "name": "insightface",
+          "type": "FACEANALYSIS",
+          "link": 103,
+          "label": "insightface",
+          "slot_index": 1
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 104,
+          "label": "control_net",
+          "slot_index": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 33,
+          "label": "image",
+          "slot_index": 3
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 34,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 35,
+          "label": "negative"
+        },
+        {
+          "name": "image_kps",
+          "type": "IMAGE",
+          "link": 44,
+          "label": "image_kps"
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": null,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            36
+          ],
+          "shape": 3,
+          "label": "MODEL",
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "label": "positive",
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            38
+          ],
+          "shape": 3,
+          "label": "negative",
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ApplyInstantIDAdvanced"
+      },
+      "widgets_values": [
+        0.8,
+        0.8,
+        0,
+        1,
+        0
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 56,
+      "type": "GetNode",
+      "pos": [
+        1279.9995727539053,
+        1561.3397544620716
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            48
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_FaceImage1",
+      "properties": {},
+      "widgets_values": [
+        "FaceImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 57,
+      "type": "GetNode",
+      "pos": [
+        1309.9995727539053,
+        1611.339754462072
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            49
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_Prompt",
+      "properties": {},
+      "widgets_values": [
+        "Prompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 58,
+      "type": "GetNode",
+      "pos": [
+        1259.9995727539053,
+        1661.339754462072
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            50
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_NegativePrompt",
+      "properties": {},
+      "widgets_values": [
+        "NegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 65,
+      "type": "ControlNetLoaderAdvanced",
+      "pos": [
+        2030.999572753904,
+        1534.3397544620716
+      ],
+      "size": {
+        "0": 327.6000061035156,
+        "1": 58.51115417480469
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "timestep_keyframe",
+          "type": "TIMESTEP_KEYFRAME",
+          "link": null,
+          "label": "timestep_keyframe"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            60
+          ],
+          "shape": 3,
+          "label": "CONTROL_NET",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoaderAdvanced"
+      },
+      "widgets_values": [
+        "diffusers_xl_depth_mid.safetensors"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 67,
+      "type": "MiDaS-DepthMapPreprocessor",
+      "pos": [
+        2167.999572753904,
+        1571.3397544620716
+      ],
+      "size": {
+        "0": 320.8772277832031,
+        "1": 106
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 89,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 61,
+          "label": "image",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            62
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiDaS-DepthMapPreprocessor"
+      },
+      "widgets_values": [
+        6.283185307179586,
+        0.1,
+        512
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 68,
+      "type": "GetNode",
+      "pos": [
+        1960.9995727539047,
+        1572.3397544620716
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            61
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage1",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 59,
+      "type": "KSamplerAdvanced //Inspire",
+      "pos": [
+        3010.999572753904,
+        1442.3397544620716
+      ],
+      "size": {
+        "0": 315,
+        "1": 450
+      },
+      "flags": {},
+      "order": 141,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 52,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 58,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 59,
+          "label": "negative"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 53,
+          "label": "latent_image",
+          "slot_index": 3
+        },
+        {
+          "name": "noise_opt",
+          "type": "NOISE",
+          "link": null,
+          "label": "noise_opt"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            54
+          ],
+          "shape": 3,
+          "label": "LATENT",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced //Inspire"
+      },
+      "widgets_values": [
+        true,
+        978074343383639,
+        "randomize",
+        30,
+        8,
+        "dpmpp_2m_sde_gpu",
+        "karras",
+        0,
+        10000,
+        "GPU(=A1111)",
+        false,
+        "incremental",
+        0,
+        0
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 60,
+      "type": "GetNode",
+      "pos": [
+        2792.999572753904,
+        1531.3397544620716
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            53
+          ],
+          "slot_index": 0,
+          "label": "LATENT"
+        }
+      ],
+      "title": "Get_EmptyLatent",
+      "properties": {},
+      "widgets_values": [
+        "EmptyLatent"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 61,
+      "type": "VAEDecode",
+      "pos": [
+        3452.999572753904,
+        1441.3397544620716
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 150,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 54,
+          "label": "samples"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            55
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 62,
+      "type": "PreviewImage",
+      "pos": [
+        3770.999572753904,
+        1439.3397544620716
+      ],
+      "size": {
+        "0": 430.2962341308594,
+        "1": 668.9073486328125
+      },
+      "flags": {},
+      "order": 154,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 55,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 63,
+      "type": "GetNode",
+      "pos": [
+        1279.9995727539053,
+        1721.339754462072
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            51
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage1",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 51,
+      "type": "ControlNetApplyAdvanced",
+      "pos": [
+        2373.999572753904,
+        1462.3397544620716
+      ],
+      "size": {
+        "0": 330.3042907714844,
+        "1": 166
+      },
+      "flags": {},
+      "order": 122,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 57,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 56,
+          "label": "negative"
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 60,
+          "label": "control_net",
+          "slot_index": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 62,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            58
+          ],
+          "shape": 3,
+          "label": "positive",
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            59
+          ],
+          "shape": 3,
+          "label": "negative",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApplyAdvanced"
+      },
+      "widgets_values": [
+        1,
+        0,
+        1
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 84,
+      "type": "ControlNetLoaderAdvanced",
+      "pos": [
+        1940,
+        2950
+      ],
+      "size": {
+        "0": 327.6000061035156,
+        "1": 58.51115417480469
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "timestep_keyframe",
+          "type": "TIMESTEP_KEYFRAME",
+          "link": null,
+          "label": "timestep_keyframe"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            78
+          ],
+          "shape": 3,
+          "label": "CONTROL_NET",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoaderAdvanced"
+      },
+      "widgets_values": [
+        "diffusers_xl_depth_mid.safetensors"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 85,
+      "type": "MiDaS-DepthMapPreprocessor",
+      "pos": [
+        2078,
+        2994
+      ],
+      "size": {
+        "0": 320.8772277832031,
+        "1": 106
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 90,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 80,
+          "label": "image",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            79
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiDaS-DepthMapPreprocessor"
+      },
+      "widgets_values": [
+        6.283185307179586,
+        0.1,
+        512
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 86,
+      "type": "GetNode",
+      "pos": [
+        1872,
+        2992
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            80
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage1",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 91,
+      "type": "GetNode",
+      "pos": [
+        1000,
+        2420
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 16,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            86
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage1",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 87,
+      "type": "AV_IPAdapter",
+      "pos": [
+        1260,
+        2400
+      ],
+      "size": {
+        "0": 228.39999389648438,
+        "1": 262
+      },
+      "flags": {},
+      "order": 91,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 86,
+          "label": "image",
+          "slot_index": 1
+        },
+        {
+          "name": "ip_adapter_opt",
+          "type": "IPADAPTER",
+          "link": 83,
+          "label": "ip_adapter_opt",
+          "slot_index": 2
+        },
+        {
+          "name": "clip_vision_opt",
+          "type": "CLIP_VISION",
+          "link": 85,
+          "label": "clip_vision_opt",
+          "slot_index": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            87
+          ],
+          "shape": 3,
+          "label": "MODEL",
+          "slot_index": 0
+        },
+        {
+          "name": "IPADAPTER",
+          "type": "IPADAPTER",
+          "links": null,
+          "shape": 3,
+          "label": "IPADAPTER"
+        },
+        {
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "links": null,
+          "shape": 3,
+          "label": "CLIP_VISION"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AV_IPAdapter"
+      },
+      "widgets_values": [
+        "None",
+        "None",
+        1,
+        0,
+        0,
+        1,
+        true
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 90,
+      "type": "CLIPVisionLoader",
+      "pos": [
+        1000,
+        2500
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "links": [
+            85
+          ],
+          "shape": 3,
+          "label": "CLIP_VISION"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPVisionLoader"
+      },
+      "widgets_values": [
+        "ip_adaptor_sdxl_pytorch_model.bin"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 88,
+      "type": "IPAdapterModelLoader",
+      "pos": [
+        970,
+        2460
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 18,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IPADAPTER",
+          "type": "IPADAPTER",
+          "links": [
+            83
+          ],
+          "shape": 3,
+          "label": "IPADAPTER"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IPAdapterModelLoader"
+      },
+      "widgets_values": [
+        "ip-adapter_sdxl.bin"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 93,
+      "type": "Note",
+      "pos": [
+        1532,
+        2408
+      ],
+      "size": {
+        "0": 235.47434997558594,
+        "1": 115.16117095947266
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 2,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n\n    ip-adapter-sdxl模型别选错了会报错"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 96,
+      "type": "GetNode",
+      "pos": [
+        1180,
+        3460
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 20,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            91
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage1",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 94,
+      "type": "Image Rembg (Remove Background)",
+      "pos": [
+        1430,
+        3430
+      ],
+      "size": {
+        "0": 315,
+        "1": 250
+      },
+      "flags": {},
+      "order": 92,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 91,
+          "label": "images"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            90
+          ],
+          "shape": 3,
+          "label": "images",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Rembg (Remove Background)"
+      },
+      "widgets_values": [
+        true,
+        "u2net",
+        false,
+        false,
+        false,
+        240,
+        10,
+        10,
+        "none"
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 95,
+      "type": "ImageToMask",
+      "pos": [
+        1820,
+        3430
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 120,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 90,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            96
+          ],
+          "shape": 3,
+          "label": "MASK",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "alpha"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 104,
+      "type": "InvertMask",
+      "pos": [
+        2164,
+        3431
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 139,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 96,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            97
+          ],
+          "shape": 3,
+          "label": "MASK",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      }
+    },
+    {
+      "id": 97,
+      "type": "SetNode",
+      "pos": [
+        2425,
+        3460
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 148,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "link": 97,
+          "label": "MASK"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_PersonMask",
+      "properties": {
+        "previousName": "PersonMask"
+      },
+      "widgets_values": [
+        "PersonMask"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 71,
+      "type": "ControlNetApplyAdvanced",
+      "pos": [
+        2290,
+        2877
+      ],
+      "size": {
+        "0": 330.3042907714844,
+        "1": 166
+      },
+      "flags": {},
+      "order": 138,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 72,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 73,
+          "label": "negative"
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 78,
+          "label": "control_net",
+          "slot_index": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 79,
+          "label": "image",
+          "slot_index": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            75
+          ],
+          "shape": 3,
+          "label": "positive",
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            76
+          ],
+          "shape": 3,
+          "label": "negative",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApplyAdvanced"
+      },
+      "widgets_values": [
+        1,
+        0,
+        1
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 105,
+      "type": "Note",
+      "pos": [
+        2076,
+        3135
+      ],
+      "size": {
+        "0": 531.232666015625,
+        "1": 235.26019287109375
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 2,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n    mask仅为测试，可以忽略\n\n   本意测试seg扣人像mask给image_kps,结果生成图纯黑色\n\n    mask切换成solidMask就好了"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 110,
+      "type": "InstantIDModelLoader",
+      "pos": [
+        284,
+        1642
+      ],
+      "size": {
+        "0": 299.1122131347656,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 22,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INSTANTID",
+          "type": "INSTANTID",
+          "links": [
+            99
+          ],
+          "shape": 3,
+          "label": "INSTANTID",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InstantIDModelLoader"
+      },
+      "widgets_values": [
+        "ip-adapter.bin"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 111,
+      "type": "InstantIDFaceAnalysis",
+      "pos": [
+        289,
+        1748
+      ],
+      "size": {
+        "0": 293.1697692871094,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 23,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "FACEANALYSIS",
+          "type": "FACEANALYSIS",
+          "links": [
+            100
+          ],
+          "shape": 3,
+          "label": "FACEANALYSIS",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InstantIDFaceAnalysis"
+      },
+      "widgets_values": [
+        "CUDA"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 114,
+      "type": "SetNode",
+      "pos": [
+        664,
+        1778
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 94,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "FACEANALYSIS",
+          "type": "FACEANALYSIS",
+          "link": 100,
+          "label": "FACEANALYSIS"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_InstantIDFaceAnalysis",
+      "properties": {
+        "previousName": "InstantIDFaceAnalysis"
+      },
+      "widgets_values": [
+        "InstantIDFaceAnalysis"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 113,
+      "type": "SetNode",
+      "pos": [
+        667,
+        1674
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 93,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "INSTANTID",
+          "type": "INSTANTID",
+          "link": 99,
+          "label": "INSTANTID"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_InstantIDModel",
+      "properties": {
+        "previousName": "InstantIDModel"
+      },
+      "widgets_values": [
+        "InstantIDModel"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 112,
+      "type": "ControlNetLoaderAdvanced",
+      "pos": [
+        295,
+        1856
+      ],
+      "size": {
+        "0": 327.6000061035156,
+        "1": 65.49889373779297
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "timestep_keyframe",
+          "type": "TIMESTEP_KEYFRAME",
+          "link": null,
+          "label": "timestep_keyframe"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            101
+          ],
+          "shape": 3,
+          "label": "CONTROL_NET",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoaderAdvanced"
+      },
+      "widgets_values": [
+        "instantid/diffusion_pytorch_model.safetensors"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 115,
+      "type": "SetNode",
+      "pos": [
+        667,
+        1884
+      ],
+      "size": {
+        "0": 226.8000030517578,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 95,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "link": 101,
+          "label": "CONTROL_NET"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_InstantIDControlNetMode",
+      "properties": {
+        "previousName": "InstantIDControlNetMode"
+      },
+      "widgets_values": [
+        "InstantIDControlNetMode"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 118,
+      "type": "GetNode",
+      "pos": [
+        1220,
+        440
+      ],
+      "size": {
+        "0": 226.8000030517578,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 25,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "INSTANTID",
+          "type": "INSTANTID",
+          "links": [
+            102
+          ],
+          "slot_index": 0,
+          "label": "INSTANTID"
+        }
+      ],
+      "title": "Get_InstantIDModel",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDModel"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 117,
+      "type": "GetNode",
+      "pos": [
+        1180,
+        540
+      ],
+      "size": {
+        "0": 226.8000030517578,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 26,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            104
+          ],
+          "slot_index": 0,
+          "label": "CONTROL_NET"
+        }
+      ],
+      "title": "Get_InstantIDControlNetMode",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDControlNetMode"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 116,
+      "type": "GetNode",
+      "pos": [
+        1180,
+        490
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 27,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "FACEANALYSIS",
+          "type": "FACEANALYSIS",
+          "links": [
+            103
+          ],
+          "slot_index": 0,
+          "label": "FACEANALYSIS"
+        }
+      ],
+      "title": "Get_InstantIDFaceAnalysis",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDFaceAnalysis"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 52,
+      "type": "ApplyInstantIDAdvanced",
+      "pos": [
+        1589.9995727539053,
+        1441.3397544620716
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 97,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "instantid",
+          "type": "INSTANTID",
+          "link": 107,
+          "label": "instantid",
+          "slot_index": 0
+        },
+        {
+          "name": "insightface",
+          "type": "FACEANALYSIS",
+          "link": 106,
+          "label": "insightface",
+          "slot_index": 1
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 105,
+          "label": "control_net",
+          "slot_index": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 48,
+          "label": "image",
+          "slot_index": 3
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 49,
+          "label": "positive",
+          "slot_index": 5
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 50,
+          "label": "negative",
+          "slot_index": 6
+        },
+        {
+          "name": "image_kps",
+          "type": "IMAGE",
+          "link": 51,
+          "label": "image_kps",
+          "slot_index": 7
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": null,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            52
+          ],
+          "shape": 3,
+          "label": "MODEL",
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            57
+          ],
+          "shape": 3,
+          "label": "positive",
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            56
+          ],
+          "shape": 3,
+          "label": "negative",
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ApplyInstantIDAdvanced"
+      },
+      "widgets_values": [
+        0.8,
+        0.8,
+        0,
+        1,
+        0
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 119,
+      "type": "GetNode",
+      "pos": [
+        1220,
+        1470
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 28,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "FACEANALYSIS",
+          "type": "FACEANALYSIS",
+          "links": [
+            106
+          ],
+          "slot_index": 0,
+          "label": "FACEANALYSIS"
+        }
+      ],
+      "title": "Get_InstantIDFaceAnalysis",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDFaceAnalysis"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 121,
+      "type": "GetNode",
+      "pos": [
+        1260,
+        1420
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 29,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INSTANTID",
+          "type": "INSTANTID",
+          "links": [
+            107
+          ],
+          "slot_index": 0,
+          "label": "INSTANTID"
+        }
+      ],
+      "title": "Get_InstantIDModel",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDModel"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 120,
+      "type": "GetNode",
+      "pos": [
+        1210,
+        1520
+      ],
+      "size": {
+        "0": 226.8000030517578,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 30,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            105
+          ],
+          "slot_index": 0,
+          "label": "CONTROL_NET"
+        }
+      ],
+      "title": "Get_InstantIDControlNetMode",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDControlNetMode"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 124,
+      "type": "GetNode",
+      "pos": [
+        1170,
+        2820
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 31,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "INSTANTID",
+          "type": "INSTANTID",
+          "links": [
+            108
+          ],
+          "slot_index": 0,
+          "label": "INSTANTID"
+        }
+      ],
+      "title": "Get_InstantIDModel",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDModel"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 122,
+      "type": "GetNode",
+      "pos": [
+        1130,
+        2870
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 32,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "FACEANALYSIS",
+          "type": "FACEANALYSIS",
+          "links": [
+            109
+          ],
+          "slot_index": 0,
+          "label": "FACEANALYSIS"
+        }
+      ],
+      "title": "Get_InstantIDFaceAnalysis",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDFaceAnalysis"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 123,
+      "type": "GetNode",
+      "pos": [
+        1120,
+        2920
+      ],
+      "size": {
+        "0": 226.8000030517578,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 33,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            110
+          ],
+          "slot_index": 0,
+          "label": "CONTROL_NET"
+        }
+      ],
+      "title": "Get_InstantIDControlNetMode",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDControlNetMode"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 76,
+      "type": "GetNode",
+      "pos": [
+        1190,
+        2970
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 34,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            68
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_FaceImage1",
+      "properties": {},
+      "widgets_values": [
+        "FaceImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 77,
+      "type": "GetNode",
+      "pos": [
+        1220,
+        3020
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 35,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            69
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_Prompt",
+      "properties": {},
+      "widgets_values": [
+        "Prompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 78,
+      "type": "GetNode",
+      "pos": [
+        1170,
+        3070
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 36,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            70
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_NegativePrompt",
+      "properties": {},
+      "widgets_values": [
+        "NegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 83,
+      "type": "GetNode",
+      "pos": [
+        1190,
+        3130
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 37,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            71
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage1",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 72,
+      "type": "ApplyInstantIDAdvanced",
+      "pos": [
+        1500,
+        2850
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 119,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "instantid",
+          "type": "INSTANTID",
+          "link": 108,
+          "label": "instantid",
+          "slot_index": 0
+        },
+        {
+          "name": "insightface",
+          "type": "FACEANALYSIS",
+          "link": 109,
+          "label": "insightface",
+          "slot_index": 1
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 110,
+          "label": "control_net",
+          "slot_index": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 68,
+          "label": "image",
+          "slot_index": 3
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 87,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 69,
+          "label": "positive",
+          "slot_index": 5
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 70,
+          "label": "negative",
+          "slot_index": 6
+        },
+        {
+          "name": "image_kps",
+          "type": "IMAGE",
+          "link": 71,
+          "label": "image_kps",
+          "slot_index": 7
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 137,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            74
+          ],
+          "shape": 3,
+          "label": "MODEL",
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            72
+          ],
+          "shape": 3,
+          "label": "positive",
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            73
+          ],
+          "shape": 3,
+          "label": "negative",
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ApplyInstantIDAdvanced"
+      },
+      "widgets_values": [
+        0.8,
+        0.8,
+        0,
+        1,
+        0
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 133,
+      "type": "GetNode",
+      "pos": [
+        1160,
+        3970
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 38,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "INSTANTID",
+          "type": "INSTANTID",
+          "links": [
+            111
+          ],
+          "slot_index": 0,
+          "label": "INSTANTID"
+        }
+      ],
+      "title": "Get_InstantIDModel",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDModel"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 131,
+      "type": "GetNode",
+      "pos": [
+        1120,
+        4020
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 39,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "FACEANALYSIS",
+          "type": "FACEANALYSIS",
+          "links": [
+            112
+          ],
+          "slot_index": 0,
+          "label": "FACEANALYSIS"
+        }
+      ],
+      "title": "Get_InstantIDFaceAnalysis",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDFaceAnalysis"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 132,
+      "type": "GetNode",
+      "pos": [
+        1110,
+        4070
+      ],
+      "size": {
+        "0": 226.8000030517578,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 40,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            113
+          ],
+          "slot_index": 0,
+          "label": "CONTROL_NET"
+        }
+      ],
+      "title": "Get_InstantIDControlNetMode",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDControlNetMode"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 23,
+      "type": "SDXLPromptStylerAll",
+      "pos": [
+        1900,
+        -110
+      ],
+      "size": {
+        "0": 388.2589416503906,
+        "1": 212.00001525878906
+      },
+      "flags": {},
+      "order": 115,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "link": 184,
+          "widget": {
+            "name": "text_positive"
+          },
+          "label": "text_positive"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive_prompt_text_g",
+          "type": "STRING",
+          "links": [],
+          "shape": 3,
+          "label": "positive_prompt_text_g",
+          "slot_index": 0
+        },
+        {
+          "name": "negative_prompt_text_g",
+          "type": "STRING",
+          "links": [
+            25
+          ],
+          "shape": 3,
+          "label": "negative_prompt_text_g",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDXLPromptStylerAll"
+      },
+      "widgets_values": [
+        "",
+        "embedding:EasyNegativeV2, embedding:ng_deepnegative_v1_75t, ",
+        "Street Photography Depth of Field",
+        "Yes",
+        false,
+        false
+      ],
+      "serialize_values": [
+        "",
+        "embedding:EasyNegativeV2, embedding:ng_deepnegative_v1_75t, ",
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 26,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        2360,
+        80
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 136,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip"
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 25,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            26
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced"
+      },
+      "widgets_values": [
+        "",
+        "mean",
+        "A1111"
+      ],
+      "serialize_values": [
+        "",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 28,
+      "type": "SetNode",
+      "pos": [
+        2890,
+        110
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 146,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 26,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_NegativePrompt",
+      "properties": {
+        "previousName": "NegativePrompt"
+      },
+      "widgets_values": [
+        "NegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 27,
+      "type": "SetNode",
+      "pos": [
+        2870,
+        -150
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 137,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 27,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_Prompt",
+      "properties": {
+        "previousName": "Prompt"
+      },
+      "widgets_values": [
+        "Prompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 146,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        2348.5011807810033,
+        -785.8931101673578
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 113,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip"
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 196,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            120
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced"
+      },
+      "widgets_values": [
+        "",
+        "mean",
+        "A1111"
+      ],
+      "serialize_values": [
+        "",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 147,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        2348.5011807810033,
+        -525.8931101673578
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 135,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip"
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 119,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            121
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced"
+      },
+      "widgets_values": [
+        "",
+        "mean",
+        "A1111"
+      ],
+      "serialize_values": [
+        "",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 149,
+      "type": "SetNode",
+      "pos": [
+        2879,
+        -496
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 145,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 121,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_NegativePrompt_2",
+      "properties": {
+        "previousName": "NegativePrompt_2"
+      },
+      "widgets_values": [
+        "NegativePrompt_2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 148,
+      "type": "SetNode",
+      "pos": [
+        2859,
+        -756
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 134,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 120,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_Prompt_2",
+      "properties": {
+        "previousName": "Prompt_2"
+      },
+      "widgets_values": [
+        "Prompt_2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 156,
+      "type": "GetNode",
+      "pos": [
+        1196,
+        3183
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 41,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            137
+          ],
+          "slot_index": 0,
+          "label": "MASK"
+        }
+      ],
+      "title": "Get_SolidMask1",
+      "properties": {},
+      "widgets_values": [
+        "SolidMask1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 125,
+      "type": "ApplyInstantIDAdvanced",
+      "pos": [
+        1490,
+        4000
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 104,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "instantid",
+          "type": "INSTANTID",
+          "link": 111,
+          "label": "instantid",
+          "slot_index": 0
+        },
+        {
+          "name": "insightface",
+          "type": "FACEANALYSIS",
+          "link": 112,
+          "label": "insightface",
+          "slot_index": 1
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 113,
+          "label": "control_net",
+          "slot_index": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 114,
+          "label": "image",
+          "slot_index": 3
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 122,
+          "label": "positive",
+          "slot_index": 5
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 123,
+          "label": "negative",
+          "slot_index": 6
+        },
+        {
+          "name": "image_kps",
+          "type": "IMAGE",
+          "link": 124,
+          "label": "image_kps",
+          "slot_index": 7
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 138,
+          "label": "mask",
+          "slot_index": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            146
+          ],
+          "shape": 3,
+          "label": "MODEL",
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            141
+          ],
+          "shape": 3,
+          "label": "positive",
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            142
+          ],
+          "shape": 3,
+          "label": "negative",
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ApplyInstantIDAdvanced"
+      },
+      "widgets_values": [
+        0.8,
+        0.8,
+        0,
+        1,
+        0
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 161,
+      "type": "SetNode",
+      "pos": [
+        1902,
+        4054
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 129,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 141,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_InstantIdPrompt1",
+      "properties": {
+        "previousName": "InstantIdPrompt1"
+      },
+      "widgets_values": [
+        "InstantIdPrompt1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 142,
+      "type": "GetNode",
+      "pos": [
+        1160,
+        4490
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 42,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "INSTANTID",
+          "type": "INSTANTID",
+          "links": [
+            126
+          ],
+          "slot_index": 0,
+          "label": "INSTANTID"
+        }
+      ],
+      "title": "Get_InstantIDModel",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDModel"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 140,
+      "type": "GetNode",
+      "pos": [
+        1120,
+        4540
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 43,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "FACEANALYSIS",
+          "type": "FACEANALYSIS",
+          "links": [
+            127
+          ],
+          "slot_index": 0,
+          "label": "FACEANALYSIS"
+        }
+      ],
+      "title": "Get_InstantIDFaceAnalysis",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDFaceAnalysis"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 141,
+      "type": "GetNode",
+      "pos": [
+        1110,
+        4590
+      ],
+      "size": {
+        "0": 226.8000030517578,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 44,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            128
+          ],
+          "slot_index": 0,
+          "label": "CONTROL_NET"
+        }
+      ],
+      "title": "Get_InstantIDControlNetMode",
+      "properties": {},
+      "widgets_values": [
+        "InstantIDControlNetMode"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 79,
+      "type": "KSamplerAdvanced //Inspire",
+      "pos": [
+        2920,
+        2860
+      ],
+      "size": {
+        "0": 315,
+        "1": 450
+      },
+      "flags": {},
+      "order": 147,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 74,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 75,
+          "label": "positive",
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 76,
+          "label": "negative"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 77,
+          "label": "latent_image",
+          "slot_index": 3
+        },
+        {
+          "name": "noise_opt",
+          "type": "NOISE",
+          "link": null,
+          "label": "noise_opt"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            81
+          ],
+          "shape": 3,
+          "label": "LATENT",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced //Inspire"
+      },
+      "widgets_values": [
+        true,
+        461922173656477,
+        "randomize",
+        30,
+        8,
+        "dpmpp_2m_sde_gpu",
+        "karras",
+        0,
+        10000,
+        "GPU(=A1111)",
+        false,
+        "incremental",
+        0,
+        0
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 80,
+      "type": "GetNode",
+      "pos": [
+        2710,
+        2950
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 45,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            77
+          ],
+          "slot_index": 0,
+          "label": "LATENT"
+        }
+      ],
+      "title": "Get_EmptyLatent",
+      "properties": {},
+      "widgets_values": [
+        "EmptyLatent"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 81,
+      "type": "VAEDecode",
+      "pos": [
+        3370,
+        2860
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 153,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 81,
+          "label": "samples",
+          "slot_index": 0
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            82
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 82,
+      "type": "PreviewImage",
+      "pos": [
+        3680,
+        2860
+      ],
+      "size": {
+        "0": 430.2962341308594,
+        "1": 668.9073486328125
+      },
+      "flags": {},
+      "order": 155,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 82,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 165,
+      "type": "SetNode",
+      "pos": [
+        1907,
+        4009
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 128,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "link": 146,
+          "label": "MODEL"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_InstantIdModel1",
+      "properties": {
+        "previousName": "InstantIdModel1"
+      },
+      "widgets_values": [
+        "InstantIdModel1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 134,
+      "type": "ApplyInstantIDAdvanced",
+      "pos": [
+        1490,
+        4520
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 99,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "instantid",
+          "type": "INSTANTID",
+          "link": 126,
+          "label": "instantid",
+          "slot_index": 0
+        },
+        {
+          "name": "insightface",
+          "type": "FACEANALYSIS",
+          "link": 127,
+          "label": "insightface",
+          "slot_index": 1
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 128,
+          "label": "control_net",
+          "slot_index": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 129,
+          "label": "image",
+          "slot_index": 3
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 147,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 130,
+          "label": "positive",
+          "slot_index": 5
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 131,
+          "label": "negative",
+          "slot_index": 6
+        },
+        {
+          "name": "image_kps",
+          "type": "IMAGE",
+          "link": 132,
+          "label": "image_kps",
+          "slot_index": 7
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 139,
+          "label": "mask",
+          "slot_index": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            157
+          ],
+          "shape": 3,
+          "label": "MODEL",
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            143
+          ],
+          "shape": 3,
+          "label": "positive",
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            144
+          ],
+          "shape": 3,
+          "label": "negative",
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ApplyInstantIDAdvanced"
+      },
+      "widgets_values": [
+        0.8,
+        0.8,
+        0,
+        1,
+        0
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 177,
+      "type": "SetNode",
+      "pos": [
+        1904,
+        4509
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 125,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "link": 157,
+          "label": "MODEL"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_InstantIdModel2",
+      "properties": {
+        "previousName": "InstantIdModel2"
+      },
+      "widgets_values": [
+        "InstantIdModel2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 167,
+      "type": "ConditioningCombine",
+      "pos": [
+        2430,
+        4184
+      ],
+      "size": {
+        "0": 249.19837951660156,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 110,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 150,
+          "label": "conditioning_1"
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 151,
+          "label": "conditioning_2"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            156
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningCombine"
+      }
+    },
+    {
+      "id": 168,
+      "type": "ConditioningCombine",
+      "pos": [
+        2436,
+        4247
+      ],
+      "size": {
+        "0": 241.19837951660156,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 109,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 148,
+          "label": "conditioning_1"
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 149,
+          "label": "conditioning_2"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            155
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningCombine"
+      }
+    },
+    {
+      "id": 178,
+      "type": "GetNode",
+      "pos": [
+        2450,
+        4125
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 46,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            158
+          ],
+          "slot_index": 0,
+          "label": "MODEL"
+        }
+      ],
+      "title": "Get_InstantIdModel2",
+      "properties": {},
+      "widgets_values": [
+        "InstantIdModel2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 175,
+      "type": "VAEDecode",
+      "pos": [
+        3272,
+        4168
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 143,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 159,
+          "label": "samples",
+          "slot_index": 0
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            160
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 180,
+      "type": "GetNode",
+      "pos": [
+        1370,
+        5126
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 47,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            164
+          ],
+          "slot_index": 0,
+          "label": "MASK"
+        }
+      ],
+      "title": "Get_SolidMask2",
+      "properties": {},
+      "widgets_values": [
+        "SolidMask2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 179,
+      "type": "GetNode",
+      "pos": [
+        1369,
+        5234
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 48,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            163
+          ],
+          "slot_index": 0,
+          "label": "MASK"
+        }
+      ],
+      "title": "Get_SolidMask1",
+      "properties": {},
+      "widgets_values": [
+        "SolidMask1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 182,
+      "type": "MaskFlip+",
+      "pos": [
+        2045,
+        5155
+      ],
+      "size": {
+        "0": 238.48753356933594,
+        "1": 58
+      },
+      "flags": {},
+      "order": 123,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 165,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            167
+          ],
+          "shape": 3,
+          "label": "MASK",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskFlip+"
+      },
+      "widgets_values": [
+        "x"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 184,
+      "type": "SetNode",
+      "pos": [
+        2342,
+        5184
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 142,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "link": 167,
+          "label": "MASK"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_PoseMask2",
+      "properties": {
+        "previousName": "PoseMask2"
+      },
+      "widgets_values": [
+        "PoseMask2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 183,
+      "type": "SetNode",
+      "pos": [
+        1985,
+        5064
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 124,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "link": 166,
+          "label": "MASK"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_PoseMask1",
+      "properties": {
+        "previousName": "PoseMask1"
+      },
+      "widgets_values": [
+        "PoseMask1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 181,
+      "type": "MaskComposite",
+      "pos": [
+        1649,
+        5155
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 98,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 164,
+          "label": "destination",
+          "slot_index": 0
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 163,
+          "label": "source"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            165,
+            166
+          ],
+          "shape": 3,
+          "label": "MASK",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "add"
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 43,
+      "type": "SetNode",
+      "pos": [
+        670,
+        1030
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 100,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "link": 39,
+          "label": "LATENT"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_EmptyLatent",
+      "properties": {
+        "previousName": "EmptyLatent"
+      },
+      "widgets_values": [
+        "EmptyLatent"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 186,
+      "type": "SetNode",
+      "pos": [
+        670,
+        2820
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 103,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "link": 168,
+          "label": "LATENT"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_EmptyLatent2Person",
+      "properties": {
+        "previousName": "EmptyLatent2Person"
+      },
+      "widgets_values": [
+        "EmptyLatent2Person"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 127,
+      "type": "GetNode",
+      "pos": [
+        1210,
+        4170
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 49,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            122
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_Prompt",
+      "properties": {},
+      "widgets_values": [
+        "Prompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 128,
+      "type": "GetNode",
+      "pos": [
+        1160,
+        4220
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 50,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            123
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_NegativePrompt",
+      "properties": {},
+      "widgets_values": [
+        "NegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 166,
+      "type": "GetNode",
+      "pos": [
+        1160,
+        4670
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 51,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            147
+          ],
+          "slot_index": 0,
+          "label": "MODEL"
+        }
+      ],
+      "title": "Get_InstantIdModel1",
+      "properties": {},
+      "widgets_values": [
+        "InstantIdModel1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 136,
+      "type": "GetNode",
+      "pos": [
+        1200,
+        4710
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 52,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            130
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_Prompt_2",
+      "properties": {},
+      "widgets_values": [
+        "Prompt_2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 137,
+      "type": "GetNode",
+      "pos": [
+        1150,
+        4760
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 53,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            131
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_NegativePrompt_2",
+      "properties": {},
+      "widgets_values": [
+        "NegativePrompt_2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 135,
+      "type": "GetNode",
+      "pos": [
+        1180,
+        4630
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 54,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            129
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_FaceImage2",
+      "properties": {},
+      "widgets_values": [
+        "FaceImage2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 138,
+      "type": "GetNode",
+      "pos": [
+        1181,
+        4809
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 55,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            132
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage2",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 158,
+      "type": "GetNode",
+      "pos": [
+        1190,
+        4860
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 56,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            139
+          ],
+          "slot_index": 0,
+          "label": "MASK"
+        }
+      ],
+      "title": "Get_PoseMask2",
+      "properties": {},
+      "widgets_values": [
+        "PoseMask2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 42,
+      "type": "EmptyLatentImage",
+      "pos": [
+        290,
+        1000
+      ],
+      "size": {
+        "0": 295.8620300292969,
+        "1": 109.24589538574219
+      },
+      "flags": {},
+      "order": 57,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            39
+          ],
+          "shape": 3,
+          "label": "LATENT",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 154,
+      "type": "SolidMask",
+      "pos": [
+        290,
+        2447
+      ],
+      "size": {
+        "0": 299.3714904785156,
+        "1": 106
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 58,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            136
+          ],
+          "shape": 3,
+          "label": "MASK",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SolidMask"
+      },
+      "widgets_values": [
+        1,
+        920,
+        1024
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 159,
+      "type": "SolidMask",
+      "pos": [
+        287,
+        2607
+      ],
+      "size": {
+        "0": 299.3714904785156,
+        "1": 106
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 59,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            140
+          ],
+          "shape": 3,
+          "label": "MASK",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SolidMask"
+      },
+      "widgets_values": [
+        1,
+        1840,
+        1024
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 185,
+      "type": "EmptyLatentImage",
+      "pos": [
+        290,
+        2790
+      ],
+      "size": {
+        "0": 295.8620300292969,
+        "1": 109.24589538574219
+      },
+      "flags": {},
+      "order": 60,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            168
+          ],
+          "shape": 3,
+          "label": "LATENT",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1840,
+        1024,
+        1
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 1,
+      "type": "Note",
+      "pos": [
+        232,
+        -244
+      ],
+      "size": {
+        "0": 665.0504760742188,
+        "1": 639.0185546875
+      },
+      "flags": {},
+      "order": 61,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n\n     Base Model Loader locally：支持加载本地模型（需 SDXL 系列模型）\n\n     InsightFace Loader：支持 CUDA 和 CPU\n\n     ID ControlNet Loader controlnet_path：ID ControlNet 模型地址\n\n     Ipadapter_instantid Loader  Ipadapter_instantid_path：模型路径 ;filename：模型名称\n\n     ID Prompt_Styler: 与各种提示词（文本）输入（如肖像大师等）、styler、 Photomaker Prompt_Styler 兼容\n\n     prompt、negative：正负提示词\n\n     style_name：支持官方提供的8种风格\n   \n     (No style)、Watercolor、Film Noir、Neon、Jungle、Mars、Vibrant Color、Snow、Line art\n\n---------------------------------------------------------------------------------------------------------------------\n\n     InstantID Generation 🆕\n\n     face_image：接入脸部参考图像\n     pipe：接入模型\n     insightface：接入 insightface 模型 🆕\n     pose_image_optional（非必要）：接入姿势参考图像（注意：仅对面部周围姿势起效，与通常的 openpose 不同）\n     positivet、negative：正负提示词\n     ip_adapter_scale：IPA 强度\n     controlnet_conditioning_scale：ID Controlnet 强度\n     step：步数，官方默认30步\n     guidance_scale：提示词相关度，一般默认为5\n     enhance_face_region：脸部增强选项 🆕\n     seed：种子\n\n\n---------------------------------------------------------------------------------------------------------------------\n\n  \n     这个工作流是学习ComfyUi_InstantID,总结整理\n\n     查看工作流建议👆图所示，Linear style比较直观"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 191,
+      "type": "LoadImage",
+      "pos": [
+        238,
+        -819
+      ],
+      "size": {
+        "0": 645.6175537109375,
+        "1": 532.7743530273438
+      },
+      "flags": {},
+      "order": 62,
+      "mode": 4,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/f0c85b40fe62db7dfa251b5b0ae0d7325f90dfb0.png@1536w_1536h_0e",
+        "image"
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 126,
+      "type": "GetNode",
+      "pos": [
+        1180,
+        4120
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 63,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            114
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_FaceImage1",
+      "properties": {},
+      "widgets_values": [
+        "FaceImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 129,
+      "type": "GetNode",
+      "pos": [
+        1180,
+        4280
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 64,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            124
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage1",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 157,
+      "type": "GetNode",
+      "pos": [
+        1191,
+        4343
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 65,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            138
+          ],
+          "slot_index": 0,
+          "label": "MASK"
+        }
+      ],
+      "title": "Get_PoseMask1",
+      "properties": {},
+      "widgets_values": [
+        "PoseMask1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 143,
+      "type": "LoadImage",
+      "pos": [
+        290,
+        1985
+      ],
+      "size": {
+        "0": 305.7159118652344,
+        "1": 398.1441955566406
+      },
+      "flags": {},
+      "order": 66,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            179
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/cccd8ff38c50f9b9f246ba4a2d5f51fe7d37557f.png@1536w_1536h_0e",
+        "image"
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 144,
+      "type": "SetNode",
+      "pos": [
+        682,
+        2014
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 105,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 179,
+          "label": "IMAGE"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_FaceImage2",
+      "properties": {
+        "previousName": "FaceImage2"
+      },
+      "widgets_values": [
+        "FaceImage2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 47,
+      "type": "LoadImage",
+      "pos": [
+        283,
+        1192
+      ],
+      "size": {
+        "0": 305.7159118652344,
+        "1": 398.1441955566406
+      },
+      "flags": {},
+      "order": 67,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            180,
+            181
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/ddc2d3710c048e48d59a1bed7fa12ae5eb8a03a8.png@1536w_1536h_0e",
+        "image"
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 152,
+      "type": "Image Flip_ally",
+      "pos": [
+        602,
+        1304
+      ],
+      "size": {
+        "0": 215.1980438232422,
+        "1": 85.89704895019531
+      },
+      "flags": {},
+      "order": 107,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 181,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            135
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Flip_ally"
+      },
+      "widgets_values": [
+        "horizontal",
+        true
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 153,
+      "type": "SetNode",
+      "pos": [
+        667,
+        1431
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 131,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 135,
+          "label": "IMAGE"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_PoseImage2",
+      "properties": {
+        "previousName": "PoseImage2"
+      },
+      "widgets_values": [
+        "PoseImage2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 34,
+      "type": "LoadImage",
+      "pos": [
+        282,
+        531
+      ],
+      "size": {
+        "0": 305.7159118652344,
+        "1": 398.1441955566406
+      },
+      "flags": {},
+      "order": 68,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            182
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/d5c9246602b358ddb5e22abed81a49c4292f0f83.png@1536w_1536h_0e",
+        "image"
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 35,
+      "type": "SetNode",
+      "pos": [
+        650,
+        559
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 108,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 182,
+          "label": "IMAGE"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_FaceImage1",
+      "properties": {
+        "previousName": "FaceImage1"
+      },
+      "widgets_values": [
+        "FaceImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 48,
+      "type": "SetNode",
+      "pos": [
+        657,
+        1221
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 106,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 180,
+          "label": "IMAGE"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_PoseImage1",
+      "properties": {
+        "previousName": "PoseImage1"
+      },
+      "widgets_values": [
+        "PoseImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 155,
+      "type": "SetNode",
+      "pos": [
+        674,
+        2476
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 101,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "link": 136,
+          "label": "MASK"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_SolidMask1",
+      "properties": {
+        "previousName": "SolidMask1"
+      },
+      "widgets_values": [
+        "SolidMask1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 160,
+      "type": "SetNode",
+      "pos": [
+        666,
+        2636
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 102,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "link": 140,
+          "label": "MASK"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_SolidMask2",
+      "properties": {
+        "previousName": "SolidMask2"
+      },
+      "widgets_values": [
+        "SolidMask2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 164,
+      "type": "SetNode",
+      "pos": [
+        1901,
+        4108
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 130,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 142,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_InstantIdNegativePrompt1",
+      "properties": {
+        "previousName": "InstantIdNegativePrompt1"
+      },
+      "widgets_values": [
+        "InstantIdNegativePrompt1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 162,
+      "type": "SetNode",
+      "pos": [
+        1900,
+        4560
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 126,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 143,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_InstantIdPrompt2",
+      "properties": {
+        "previousName": "InstantIdPrompt2"
+      },
+      "widgets_values": [
+        "InstantIdPrompt2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 163,
+      "type": "SetNode",
+      "pos": [
+        1900,
+        4610
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 127,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 144,
+          "label": "CONDITIONING"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_InstantIdNegativePrompt2",
+      "properties": {
+        "previousName": "InstantIdNegativePrompt2"
+      },
+      "widgets_values": [
+        "InstantIdNegativePrompt2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 169,
+      "type": "GetNode",
+      "pos": [
+        2182,
+        4272
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 69,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            149
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_InstantIdNegativePrompt2",
+      "properties": {},
+      "widgets_values": [
+        "InstantIdNegativePrompt2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 170,
+      "type": "GetNode",
+      "pos": [
+        2171,
+        4232
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 70,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            148
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_InstantIdNegativePrompt1",
+      "properties": {},
+      "widgets_values": [
+        "InstantIdNegativePrompt1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 172,
+      "type": "GetNode",
+      "pos": [
+        2219,
+        4185
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 71,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            151
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_InstantIdPrompt2",
+      "properties": {},
+      "widgets_values": [
+        "InstantIdPrompt2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 171,
+      "type": "GetNode",
+      "pos": [
+        2220,
+        4141
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 72,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            150
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "Get_InstantIdPrompt1",
+      "properties": {},
+      "widgets_values": [
+        "InstantIdPrompt1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 174,
+      "type": "GetNode",
+      "pos": [
+        2431,
+        4300
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 73,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            152
+          ],
+          "slot_index": 0,
+          "label": "LATENT"
+        }
+      ],
+      "title": "Get_EmptyLatent2Person",
+      "properties": {},
+      "widgets_values": [
+        "EmptyLatent2Person"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 194,
+      "type": "GetNode",
+      "pos": [
+        2440,
+        5902
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 74,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            185
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_FaceImage2",
+      "properties": {},
+      "widgets_values": [
+        "FaceImage2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 203,
+      "type": "Ipadapter_instantidLoader",
+      "pos": [
+        2382,
+        5943
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 133,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "MODEL",
+          "link": 192,
+          "label": "pipe",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            193
+          ],
+          "shape": 3,
+          "label": "MODEL",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Ipadapter_instantidLoader"
+      },
+      "widgets_values": [
+        "default",
+        "ip-adapter.bin"
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 196,
+      "type": "InsightFaceLoader_Zho",
+      "pos": [
+        2415,
+        5992
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 75,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "INSIGHTFACEMODEL",
+          "type": "INSIGHTFACEMODEL",
+          "links": [
+            186
+          ],
+          "shape": 3,
+          "label": "INSIGHTFACEMODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InsightFaceLoader_Zho"
+      },
+      "widgets_values": [
+        "CUDA"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 197,
+      "type": "GetNode",
+      "pos": [
+        2439,
+        6037
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 76,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            187
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage1",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 198,
+      "type": "SDXLPromptStylerbyCamera",
+      "pos": [
+        2256,
+        6087
+      ],
+      "size": {
+        "0": 343.5068359375,
+        "1": 196.11917114257812
+      },
+      "flags": {},
+      "order": 77,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "positive_prompt_text_g",
+          "type": "STRING",
+          "links": [
+            188
+          ],
+          "shape": 3,
+          "label": "positive_prompt_text_g",
+          "slot_index": 0
+        },
+        {
+          "name": "negative_prompt_text_g",
+          "type": "STRING",
+          "links": [
+            189
+          ],
+          "shape": 3,
+          "label": "negative_prompt_text_g",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDXLPromptStylerbyCamera"
+      },
+      "widgets_values": [
+        "1boy, smile, close up, night",
+        "embedding:EasyNegativeV2, embedding:ng_deepnegative_v1_75t, ",
+        "none byCamera",
+        "No"
+      ],
+      "serialize_values": [
+        "1boy, smile, close up, night",
+        "embedding:EasyNegativeV2, embedding:ng_deepnegative_v1_75t, ",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 173,
+      "type": "KSamplerAdvanced //Inspire",
+      "pos": [
+        2781,
+        4167
+      ],
+      "size": {
+        "0": 315,
+        "1": 450
+      },
+      "flags": {},
+      "order": 132,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 158,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 156,
+          "label": "positive",
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 155,
+          "label": "negative"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 152,
+          "label": "latent_image",
+          "slot_index": 3
+        },
+        {
+          "name": "noise_opt",
+          "type": "NOISE",
+          "link": null,
+          "label": "noise_opt"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            159
+          ],
+          "shape": 3,
+          "label": "LATENT",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced //Inspire"
+      },
+      "widgets_values": [
+        true,
+        1030178920434187,
+        "randomize",
+        30,
+        5,
+        "dpmpp_2m_sde_gpu",
+        "karras",
+        0,
+        10000,
+        "GPU(=A1111)",
+        false,
+        "incremental",
+        0,
+        0
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 193,
+      "type": "IDGenerationNode",
+      "pos": [
+        2739,
+        5879
+      ],
+      "size": {
+        "0": 400,
+        "1": 310
+      },
+      "flags": {},
+      "order": 144,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "face_image",
+          "type": "IMAGE",
+          "link": 185,
+          "label": "face_image"
+        },
+        {
+          "name": "pipe",
+          "type": "MODEL",
+          "link": 193,
+          "label": "pipe",
+          "slot_index": 1
+        },
+        {
+          "name": "insightface",
+          "type": "INSIGHTFACEMODEL",
+          "link": 186,
+          "label": "insightface",
+          "slot_index": 2
+        },
+        {
+          "name": "pose_image_optional",
+          "type": "IMAGE",
+          "link": 187,
+          "label": "pose_image_optional",
+          "slot_index": 3
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 188,
+          "widget": {
+            "name": "positive"
+          },
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 189,
+          "widget": {
+            "name": "negative"
+          },
+          "label": "negative"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            194
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IDGenerationNode"
+      },
+      "widgets_values": [
+        "",
+        "",
+        0.8,
+        0.8,
+        30,
+        5,
+        true,
+        722474064483898,
+        "randomize"
+      ],
+      "serialize_values": [
+        "",
+        "",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 204,
+      "type": "PreviewImage",
+      "pos": [
+        3274,
+        5878
+      ],
+      "size": {
+        "0": 1116.832275390625,
+        "1": 918.1192016601562
+      },
+      "flags": {},
+      "order": 152,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 194,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 199,
+      "type": "IDBaseModelLoader_local",
+      "pos": [
+        1854,
+        5909
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 111,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "controlnet",
+          "type": "MODEL",
+          "link": 191,
+          "label": "controlnet",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "MODEL",
+          "links": [
+            192
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IDBaseModelLoader_local"
+      },
+      "widgets_values": [
+        "墨幽人造人XL(v0.1)"
+      ],
+      "serialize_values": [
+        "1656_3101_3690@a1c3c7e4ea.safetensors"
+      ]
+    },
+    {
+      "id": 201,
+      "type": "IDControlNetLoader",
+      "pos": [
+        1282,
+        5910
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 78,
+      "mode": 2,
+      "outputs": [
+        {
+          "name": "controlnet",
+          "type": "MODEL",
+          "links": [
+            191
+          ],
+          "shape": 3,
+          "label": "controlnet",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IDControlNetLoader"
+      },
+      "widgets_values": [
+        "default"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 176,
+      "type": "PreviewImage",
+      "pos": [
+        3657,
+        4167
+      ],
+      "size": {
+        "0": 1057.0272216796875,
+        "1": 613.0077514648438
+      },
+      "flags": {},
+      "order": 151,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 160,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 192,
+      "type": "GetNode",
+      "pos": [
+        1433,
+        -663
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 79,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            183
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage2",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage2"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 205,
+      "type": "TranslateNode",
+      "pos": [
+        1727,
+        -737
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 80,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            196,
+            197
+          ],
+          "shape": 6,
+          "label": "STRING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TranslateNode"
+      },
+      "widgets_values": [
+        "comic male character. graphic illustration, comic art, graphic novel art, vibrant, highly detailed. New York background\n\n"
+      ],
+      "serialize_values": [
+        "comic male character. graphic illustration, comic art, graphic novel art, vibrant, highly detailed. New York background\n\n"
+      ]
+    },
+    {
+      "id": 145,
+      "type": "SDXLPromptStylerAll",
+      "pos": [
+        1879,
+        -716
+      ],
+      "size": {
+        "0": 388.2589416503906,
+        "1": 212.00001525878906
+      },
+      "flags": {},
+      "order": 114,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "link": 197,
+          "widget": {
+            "name": "text_positive"
+          },
+          "label": "text_positive",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive_prompt_text_g",
+          "type": "STRING",
+          "links": [],
+          "shape": 3,
+          "label": "positive_prompt_text_g",
+          "slot_index": 0
+        },
+        {
+          "name": "negative_prompt_text_g",
+          "type": "STRING",
+          "links": [
+            119
+          ],
+          "shape": 3,
+          "label": "negative_prompt_text_g",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDXLPromptStylerAll"
+      },
+      "widgets_values": [
+        "",
+        "embedding:EasyNegativeV2, embedding:ng_deepnegative_v1_75t, ",
+        "Cyberpunk Street Shaman",
+        "Yes",
+        false,
+        false
+      ],
+      "serialize_values": [
+        "",
+        "embedding:EasyNegativeV2, embedding:ng_deepnegative_v1_75t, ",
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 25,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        2360,
+        -180
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 116,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip"
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 198,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text",
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            27
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced"
+      },
+      "widgets_values": [
+        "",
+        "mean",
+        "A1111"
+      ],
+      "serialize_values": [
+        "",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 24,
+      "type": "TranslateNode",
+      "pos": [
+        1743,
+        -133
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 81,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            184,
+            198
+          ],
+          "shape": 6,
+          "label": "STRING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TranslateNode"
+      },
+      "widgets_values": [
+        "comic female character. graphic illustration, comic art, graphic novel art, vibrant, highly detailed. New York background"
+      ],
+      "serialize_values": [
+        "comic female character. graphic illustration, comic art, graphic novel art, vibrant, highly detailed. New York background"
+      ]
+    },
+    {
+      "id": 69,
+      "type": "ClipInterrogator",
+      "pos": [
+        1672,
+        -86
+      ],
+      "size": {
+        "0": 210,
+        "1": 244
+      },
+      "flags": {},
+      "order": 117,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 63,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [],
+          "shape": 6,
+          "label": "prompt",
+          "slot_index": 0
+        },
+        {
+          "name": "random_samples",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "random_samples"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ClipInterrogator"
+      },
+      "widgets_values": [
+        "best",
+        "on",
+        "a woman in a black dress holding a cell, colors of tron legacy, hollywood promotional image, black bob cut hair, model is wearing techtical vest, closeup of the face, cortana, archer, mixed-race woman, jean grey, beautiful jewish woman, game promotional poster, girl with short white hair, seductive eyes and face, character portrait closeup, by Edward Baird",
+        "[\n  {\n    \"medium_ranks\": {\n      \"a character portrait\": 0.192138671875,\n      \"a hologram\": 0.1871337890625,\n      \"concept art\": 0.1817626953125,\n      \"a computer rendering\": 0.181640625,\n      \"computer graphics\": 0.181640625\n    },\n    \"artist_ranks\": {\n      \"by ridley scott\": 0.202880859375,\n      \"inspired by Eve Ryder\": 0.2020263671875,\n      \"inspired by Ruth Deckard\": 0.193603515625,\n      \"inspired by Raymond Swanland\": 0.19189453125,\n      \"inspired by Nora Cundell\": 0.1910400390625\n    },\n    \"movement_ranks\": {\n      \"panfuturism\": 0.1800537109375,\n      \"photorealism\": 0.176513671875,\n      \"neo-figurative\": 0.176513671875,\n      \"retrofuturism\": 0.1737060546875,\n      \"antipodeans\": 0.168701171875\n    },\n    \"trending_ranks\": {\n      \"cgsociety\": 0.22314453125,\n      \"trending on cgsociety\": 0.1851806640625,\n      \"featured on cgsociety\": 0.181884765625,\n      \"trending on cg society\": 0.181396484375,\n      \"cgsociety contest winner\": 0.1795654296875\n    },\n    \"flavor_ranks\": {\n      \"movie still of a cyborg\": 0.2626953125,\n      \"colors of tron legacy\": 0.261474609375,\n      \"beautiful android woman\": 0.259765625,\n      \"summer glau as cortana from halo\": 0.257568359375,\n      \"beautiful alluring female cyborg\": 0.257080078125\n    }\n  }\n]",
+        "a hologram,by ridley scott,neo-figurative,cgsociety,movie still of a cyborg\n\na computer rendering,by ridley scott,photorealism,trending on cg society,colors of tron legacy\n\nconcept art,inspired by Ruth Deckard,neo-figurative,cgsociety contest winner,movie still of a cyborg\n\nconcept art,inspired by Raymond Swanland,neo-figurative,featured on cgsociety,summer glau as cortana from halo\n\na hologram,inspired by Raymond Swanland,antipodeans,featured on cgsociety,beautiful android woman"
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 70,
+      "type": "GetNode",
+      "pos": [
+        1461,
+        -58
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 82,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            63
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_PoseImage1",
+      "properties": {},
+      "widgets_values": [
+        "PoseImage1"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 206,
+      "type": "Note",
+      "pos": [
+        1531,
+        -895
+      ],
+      "size": {
+        "0": 300.5579833984375,
+        "1": 104.16658020019531
+      },
+      "flags": {},
+      "order": 83,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n   为了方便测试，两个instantid采用.  translateNote节点\n  \n   其他组可以直接用clipInterrogator"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 207,
+      "type": "Note",
+      "pos": [
+        1432,
+        -226
+      ],
+      "size": {
+        "0": 300.5579833984375,
+        "1": 104.16658020019531
+      },
+      "flags": {},
+      "order": 84,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n   为了方便测试，两个instantid采用.  translateNote节点\n  \n   其他组可以直接用clipInterrogator"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 208,
+      "type": "Note",
+      "pos": [
+        298,
+        2964
+      ],
+      "size": {
+        "0": 286.945556640625,
+        "1": 127.251220703125
+      },
+      "flags": {},
+      "order": 85,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n\n\n     width \\ height根据自己实际尺寸修改"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 209,
+      "type": "Note",
+      "pos": [
+        2122,
+        4708
+      ],
+      "size": {
+        "0": 543.5674438476562,
+        "1": 193.08016967773438
+      },
+      "flags": {},
+      "order": 86,
+      "mode": 2,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n\n     这个模块工作流单独抽离出来测试结果：分区域绘制没有那么理想\n\n    能绘制出两个人，但是有点不忍直视\n\n    在这个模块内不知道为什么绘制不出想要的结果，可能是prompt问题\n\n    仅个人学习，个人推荐： Ipadapter+Applay InstantId+_image_kps+controlnet-xl-tile生图\n\n    controlnet模块可以串联，controlnet-xl-tile模型网站暂时没有就没测试了"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 150,
+      "type": "ClipInterrogator",
+      "pos": [
+        1651,
+        -691
+      ],
+      "size": {
+        "0": 210,
+        "1": 244
+      },
+      "flags": {},
+      "order": 112,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 183,
+          "label": "image",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [],
+          "shape": 6,
+          "label": "prompt",
+          "slot_index": 0
+        },
+        {
+          "name": "random_samples",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "random_samples"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ClipInterrogator"
+      },
+      "widgets_values": [
+        "best",
+        "on",
+        "a woman in a futuristic suit holding a gun, colors of tron legacy, with short hair with bangs, still image from the movie, amoled, bbc promotional artwork, olivia wilde, sexy movie photo, website banner, black shiny bob haircut, asian woman, reduce character duplication, winamp skin, beautiful android woman, [ theatrical ]",
+        "[\n  {\n    \"medium_ranks\": {\n      \"computer graphics\": 0.178466796875,\n      \"a computer rendering\": 0.176025390625,\n      \"cyberpunk art\": 0.174560546875,\n      \"a hologram\": 0.174072265625,\n      \"concept art\": 0.1705322265625\n    },\n    \"artist_ranks\": {\n      \"by ridley scott\": 0.205322265625,\n      \"by roger deakins\": 0.189697265625,\n      \"inspired by Raymond Swanland\": 0.1883544921875,\n      \"inspired by Edward George Handel Lucas\": 0.1878662109375,\n      \"inspired by Nora Cundell\": 0.18505859375\n    },\n    \"movement_ranks\": {\n      \"panfuturism\": 0.1781005859375,\n      \"retrofuturism\": 0.174072265625,\n      \"neo-figurative\": 0.1712646484375,\n      \"futurism\": 0.1661376953125,\n      \"les automatistes\": 0.1656494140625\n    },\n    \"trending_ranks\": {\n      \"cgsociety\": 0.2181396484375,\n      \"featured on cgsociety\": 0.185791015625,\n      \"trending on cgsociety\": 0.1806640625,\n      \"cgsociety contest winner\": 0.179931640625,\n      \"cg society contest winner\": 0.17626953125\n    },\n    \"flavor_ranks\": {\n      \"colors of tron legacy\": 0.2626953125,\n      \"tron legacy\": 0.25048828125,\n      \"cgsociety 9\": 0.2421875,\n      \"still from alita\": 0.2403564453125,\n      \"movie still of a cyborg\": 0.2371826171875\n    }\n  }\n]",
+        "cyberpunk art,inspired by Nora Cundell,futurism,cgsociety,colors of tron legacy\n\na computer rendering,by roger deakins,panfuturism,cg society contest winner,colors of tron legacy\n\ncomputer graphics,inspired by Edward George Handel Lucas,panfuturism,featured on cgsociety,cgsociety 9\n\ncomputer graphics,by roger deakins,retrofuturism,trending on cgsociety,cgsociety 9\n\na hologram,inspired by Nora Cundell,panfuturism,featured on cgsociety,movie still of a cyborg"
+      ],
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 210,
+      "type": "Note",
+      "pos": [
+        422,
+        -1080
+      ],
+      "size": {
+        "0": 282.0700378417969,
+        "1": 218.84591674804688
+      },
+      "flags": {},
+      "order": 87,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n\n\n\n\n        测试前请先看每个注视\n\n         单个模块测试，忽略其他节点"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      19,
+      17,
+      1,
+      18,
+      0,
+      "CLIP"
+    ],
+    [
+      20,
+      18,
+      0,
+      19,
+      2,
+      "*"
+    ],
+    [
+      21,
+      17,
+      2,
+      19,
+      1,
+      "*"
+    ],
+    [
+      22,
+      17,
+      0,
+      19,
+      0,
+      "*"
+    ],
+    [
+      25,
+      23,
+      1,
+      26,
+      1,
+      "STRING"
+    ],
+    [
+      26,
+      26,
+      0,
+      28,
+      0,
+      "*"
+    ],
+    [
+      27,
+      25,
+      0,
+      27,
+      0,
+      "*"
+    ],
+    [
+      33,
+      36,
+      0,
+      29,
+      3,
+      "IMAGE"
+    ],
+    [
+      34,
+      37,
+      0,
+      29,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      35,
+      38,
+      0,
+      29,
+      6,
+      "CONDITIONING"
+    ],
+    [
+      36,
+      29,
+      0,
+      41,
+      0,
+      "MODEL"
+    ],
+    [
+      37,
+      29,
+      1,
+      41,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      38,
+      29,
+      2,
+      41,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      39,
+      42,
+      0,
+      43,
+      0,
+      "*"
+    ],
+    [
+      40,
+      44,
+      0,
+      41,
+      3,
+      "LATENT"
+    ],
+    [
+      41,
+      41,
+      0,
+      45,
+      0,
+      "LATENT"
+    ],
+    [
+      42,
+      45,
+      0,
+      46,
+      0,
+      "IMAGE"
+    ],
+    [
+      44,
+      49,
+      0,
+      29,
+      7,
+      "IMAGE"
+    ],
+    [
+      48,
+      56,
+      0,
+      52,
+      3,
+      "IMAGE"
+    ],
+    [
+      49,
+      57,
+      0,
+      52,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      50,
+      58,
+      0,
+      52,
+      6,
+      "CONDITIONING"
+    ],
+    [
+      51,
+      63,
+      0,
+      52,
+      7,
+      "IMAGE"
+    ],
+    [
+      52,
+      52,
+      0,
+      59,
+      0,
+      "MODEL"
+    ],
+    [
+      53,
+      60,
+      0,
+      59,
+      3,
+      "LATENT"
+    ],
+    [
+      54,
+      59,
+      0,
+      61,
+      0,
+      "LATENT"
+    ],
+    [
+      55,
+      61,
+      0,
+      62,
+      0,
+      "IMAGE"
+    ],
+    [
+      56,
+      52,
+      2,
+      51,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      57,
+      52,
+      1,
+      51,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      58,
+      51,
+      0,
+      59,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      59,
+      51,
+      1,
+      59,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      60,
+      65,
+      0,
+      51,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      61,
+      68,
+      0,
+      67,
+      0,
+      "IMAGE"
+    ],
+    [
+      62,
+      67,
+      0,
+      51,
+      3,
+      "IMAGE"
+    ],
+    [
+      63,
+      70,
+      0,
+      69,
+      0,
+      "IMAGE"
+    ],
+    [
+      68,
+      76,
+      0,
+      72,
+      3,
+      "IMAGE"
+    ],
+    [
+      69,
+      77,
+      0,
+      72,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      70,
+      78,
+      0,
+      72,
+      6,
+      "CONDITIONING"
+    ],
+    [
+      71,
+      83,
+      0,
+      72,
+      7,
+      "IMAGE"
+    ],
+    [
+      72,
+      72,
+      1,
+      71,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      73,
+      72,
+      2,
+      71,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      74,
+      72,
+      0,
+      79,
+      0,
+      "MODEL"
+    ],
+    [
+      75,
+      71,
+      0,
+      79,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      76,
+      71,
+      1,
+      79,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      77,
+      80,
+      0,
+      79,
+      3,
+      "LATENT"
+    ],
+    [
+      78,
+      84,
+      0,
+      71,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      79,
+      85,
+      0,
+      71,
+      3,
+      "IMAGE"
+    ],
+    [
+      80,
+      86,
+      0,
+      85,
+      0,
+      "IMAGE"
+    ],
+    [
+      81,
+      79,
+      0,
+      81,
+      0,
+      "LATENT"
+    ],
+    [
+      82,
+      81,
+      0,
+      82,
+      0,
+      "IMAGE"
+    ],
+    [
+      83,
+      88,
+      0,
+      87,
+      2,
+      "IPADAPTER"
+    ],
+    [
+      85,
+      90,
+      0,
+      87,
+      3,
+      "CLIP_VISION"
+    ],
+    [
+      86,
+      91,
+      0,
+      87,
+      1,
+      "IMAGE"
+    ],
+    [
+      87,
+      87,
+      0,
+      72,
+      4,
+      "MODEL"
+    ],
+    [
+      90,
+      94,
+      0,
+      95,
+      0,
+      "IMAGE"
+    ],
+    [
+      91,
+      96,
+      0,
+      94,
+      0,
+      "IMAGE"
+    ],
+    [
+      96,
+      95,
+      0,
+      104,
+      0,
+      "MASK"
+    ],
+    [
+      97,
+      104,
+      0,
+      97,
+      0,
+      "MASK"
+    ],
+    [
+      99,
+      110,
+      0,
+      113,
+      0,
+      "*"
+    ],
+    [
+      100,
+      111,
+      0,
+      114,
+      0,
+      "*"
+    ],
+    [
+      101,
+      112,
+      0,
+      115,
+      0,
+      "*"
+    ],
+    [
+      102,
+      118,
+      0,
+      29,
+      0,
+      "INSTANTID"
+    ],
+    [
+      103,
+      116,
+      0,
+      29,
+      1,
+      "FACEANALYSIS"
+    ],
+    [
+      104,
+      117,
+      0,
+      29,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      105,
+      120,
+      0,
+      52,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      106,
+      119,
+      0,
+      52,
+      1,
+      "FACEANALYSIS"
+    ],
+    [
+      107,
+      121,
+      0,
+      52,
+      0,
+      "INSTANTID"
+    ],
+    [
+      108,
+      124,
+      0,
+      72,
+      0,
+      "INSTANTID"
+    ],
+    [
+      109,
+      122,
+      0,
+      72,
+      1,
+      "FACEANALYSIS"
+    ],
+    [
+      110,
+      123,
+      0,
+      72,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      111,
+      133,
+      0,
+      125,
+      0,
+      "INSTANTID"
+    ],
+    [
+      112,
+      131,
+      0,
+      125,
+      1,
+      "FACEANALYSIS"
+    ],
+    [
+      113,
+      132,
+      0,
+      125,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      114,
+      126,
+      0,
+      125,
+      3,
+      "IMAGE"
+    ],
+    [
+      119,
+      145,
+      1,
+      147,
+      1,
+      "STRING"
+    ],
+    [
+      120,
+      146,
+      0,
+      148,
+      0,
+      "*"
+    ],
+    [
+      121,
+      147,
+      0,
+      149,
+      0,
+      "*"
+    ],
+    [
+      122,
+      127,
+      0,
+      125,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      123,
+      128,
+      0,
+      125,
+      6,
+      "CONDITIONING"
+    ],
+    [
+      124,
+      129,
+      0,
+      125,
+      7,
+      "IMAGE"
+    ],
+    [
+      126,
+      142,
+      0,
+      134,
+      0,
+      "INSTANTID"
+    ],
+    [
+      127,
+      140,
+      0,
+      134,
+      1,
+      "FACEANALYSIS"
+    ],
+    [
+      128,
+      141,
+      0,
+      134,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      129,
+      135,
+      0,
+      134,
+      3,
+      "IMAGE"
+    ],
+    [
+      130,
+      136,
+      0,
+      134,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      131,
+      137,
+      0,
+      134,
+      6,
+      "CONDITIONING"
+    ],
+    [
+      132,
+      138,
+      0,
+      134,
+      7,
+      "IMAGE"
+    ],
+    [
+      135,
+      152,
+      0,
+      153,
+      0,
+      "*"
+    ],
+    [
+      136,
+      154,
+      0,
+      155,
+      0,
+      "*"
+    ],
+    [
+      137,
+      156,
+      0,
+      72,
+      8,
+      "MASK"
+    ],
+    [
+      138,
+      157,
+      0,
+      125,
+      8,
+      "MASK"
+    ],
+    [
+      139,
+      158,
+      0,
+      134,
+      8,
+      "MASK"
+    ],
+    [
+      140,
+      159,
+      0,
+      160,
+      0,
+      "*"
+    ],
+    [
+      141,
+      125,
+      1,
+      161,
+      0,
+      "*"
+    ],
+    [
+      142,
+      125,
+      2,
+      164,
+      0,
+      "*"
+    ],
+    [
+      143,
+      134,
+      1,
+      162,
+      0,
+      "*"
+    ],
+    [
+      144,
+      134,
+      2,
+      163,
+      0,
+      "*"
+    ],
+    [
+      146,
+      125,
+      0,
+      165,
+      0,
+      "*"
+    ],
+    [
+      147,
+      166,
+      0,
+      134,
+      4,
+      "MODEL"
+    ],
+    [
+      148,
+      170,
+      0,
+      168,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      149,
+      169,
+      0,
+      168,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      150,
+      171,
+      0,
+      167,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      151,
+      172,
+      0,
+      167,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      152,
+      174,
+      0,
+      173,
+      3,
+      "LATENT"
+    ],
+    [
+      155,
+      168,
+      0,
+      173,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      156,
+      167,
+      0,
+      173,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      157,
+      134,
+      0,
+      177,
+      0,
+      "*"
+    ],
+    [
+      158,
+      178,
+      0,
+      173,
+      0,
+      "MODEL"
+    ],
+    [
+      159,
+      173,
+      0,
+      175,
+      0,
+      "LATENT"
+    ],
+    [
+      160,
+      175,
+      0,
+      176,
+      0,
+      "IMAGE"
+    ],
+    [
+      163,
+      179,
+      0,
+      181,
+      1,
+      "MASK"
+    ],
+    [
+      164,
+      180,
+      0,
+      181,
+      0,
+      "MASK"
+    ],
+    [
+      165,
+      181,
+      0,
+      182,
+      0,
+      "MASK"
+    ],
+    [
+      166,
+      181,
+      0,
+      183,
+      0,
+      "*"
+    ],
+    [
+      167,
+      182,
+      0,
+      184,
+      0,
+      "*"
+    ],
+    [
+      168,
+      185,
+      0,
+      186,
+      0,
+      "*"
+    ],
+    [
+      179,
+      143,
+      0,
+      144,
+      0,
+      "IMAGE"
+    ],
+    [
+      180,
+      47,
+      0,
+      48,
+      0,
+      "IMAGE"
+    ],
+    [
+      181,
+      47,
+      0,
+      152,
+      0,
+      "IMAGE"
+    ],
+    [
+      182,
+      34,
+      0,
+      35,
+      0,
+      "IMAGE"
+    ],
+    [
+      183,
+      192,
+      0,
+      150,
+      0,
+      "IMAGE"
+    ],
+    [
+      184,
+      24,
+      0,
+      23,
+      0,
+      "STRING"
+    ],
+    [
+      185,
+      194,
+      0,
+      193,
+      0,
+      "IMAGE"
+    ],
+    [
+      186,
+      196,
+      0,
+      193,
+      2,
+      "INSIGHTFACEMODEL"
+    ],
+    [
+      187,
+      197,
+      0,
+      193,
+      3,
+      "IMAGE"
+    ],
+    [
+      188,
+      198,
+      0,
+      193,
+      4,
+      "STRING"
+    ],
+    [
+      189,
+      198,
+      1,
+      193,
+      5,
+      "STRING"
+    ],
+    [
+      191,
+      201,
+      0,
+      199,
+      0,
+      "MODEL"
+    ],
+    [
+      192,
+      199,
+      0,
+      203,
+      0,
+      "MODEL"
+    ],
+    [
+      193,
+      203,
+      0,
+      193,
+      1,
+      "MODEL"
+    ],
+    [
+      194,
+      193,
+      0,
+      204,
+      0,
+      "IMAGE"
+    ],
+    [
+      196,
+      205,
+      0,
+      146,
+      1,
+      "STRING"
+    ],
+    [
+      197,
+      205,
+      0,
+      145,
+      0,
+      "STRING"
+    ],
+    [
+      198,
+      24,
+      0,
+      25,
+      1,
+      "STRING"
+    ],
+    [
+      199,
+      17,
+      2,
+      61,
+      1,
+      "VAE"
+    ],
+    [
+      200,
+      17,
+      0,
+      52,
+      4,
+      "MODEL"
+    ],
+    [
+      201,
+      18,
+      0,
+      26,
+      0,
+      "CLIP"
+    ],
+    [
+      202,
+      18,
+      0,
+      146,
+      0,
+      "CLIP"
+    ],
+    [
+      203,
+      18,
+      0,
+      147,
+      0,
+      "CLIP"
+    ],
+    [
+      204,
+      18,
+      0,
+      25,
+      0,
+      "CLIP"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Group",
+      "bounding": [
+        1395,
+        -274,
+        1719,
+        567
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        905,
+        -274,
+        484,
+        567
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "          基础的InstantId运用",
+      "bounding": [
+        902,
+        303,
+        2844,
+        913
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        230,
+        408,
+        665,
+        2834
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "          方便对比，注视掉姿势参考pose，采用controlnet-depth",
+      "bounding": [
+        902,
+        1220,
+        3432,
+        1040
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "          串联Ipadapter，并测试mask",
+      "bounding": [
+        900,
+        2265,
+        3440,
+        1474
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        901,
+        3743,
+        4604,
+        1955
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        1394,
+        -991,
+        1718,
+        714
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        899,
+        5702,
+        4604,
+        1674
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

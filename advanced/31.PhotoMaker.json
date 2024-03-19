@@ -1,0 +1,461 @@
+{
+  "last_node_id": 31,
+  "last_link_id": 40,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "pos": [
+        -60,
+        528
+      ],
+      "size": {
+        "0": 320,
+        "1": 440
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/b5881c40e4ded2f7609ba4fec4a60f6467898756.png@1536w_1536h_0e",
+        "image"
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 4,
+      "type": "Ref_Image_Preprocessing",
+      "pos": [
+        330,
+        529
+      ],
+      "size": {
+        "0": 320,
+        "1": 82
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ref_image",
+          "type": "IMAGE",
+          "link": 4,
+          "label": "ref_image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Ref_Image_Preprocessing"
+      },
+      "widgets_values": [
+        "path/to/images",
+        "direct_Input"
+      ],
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 29,
+      "type": "SaveImage",
+      "pos": [
+        1206,
+        428
+      ],
+      "size": {
+        "0": 443.44891357421875,
+        "1": 469.3961181640625
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 36,
+          "label": "images"
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "serialize_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "PhotoMakerAdapter_Loader_local",
+      "pos": [
+        326,
+        367
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "MODEL",
+          "link": 38,
+          "label": "pipe"
+        },
+        {
+          "name": "pm_model_path",
+          "type": "STRING",
+          "link": 37,
+          "widget": {
+            "name": "pm_model_path"
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            40
+          ],
+          "shape": 3,
+          "label": "MODEL",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoMakerAdapter_Loader_local"
+      },
+      "widgets_values": [
+        "path/to/model",
+        "photomaker-v1.bin"
+      ],
+      "serialize_values": [
+        "path/to/model",
+        null
+      ]
+    },
+    {
+      "id": 26,
+      "type": "BaseModel_Loader_local",
+      "pos": [
+        -63,
+        281
+      ],
+      "size": {
+        "0": 320,
+        "1": 60
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "MODEL",
+          "links": [
+            38
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "pipe"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BaseModel_Loader_local"
+      },
+      "widgets_values": [
+        "RealVisXL(v3.0 (bakedVAE))"
+      ],
+      "serialize_values": [
+        "3341_5020_5883@364cecf630.safetensors"
+      ]
+    },
+    {
+      "id": 31,
+      "type": "Text",
+      "pos": [
+        -56,
+        390
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "label": "STRING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text"
+      },
+      "widgets_values": [
+        "ComfyUI/"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 2,
+      "type": "Prompt_Styler",
+      "pos": [
+        332,
+        664
+      ],
+      "size": [
+        317.07598876953125,
+        343.2525177001953
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "links": [
+            1
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "positive_prompt"
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "links": [
+            2
+          ],
+          "shape": 3,
+          "slot_index": 1,
+          "label": "negative_prompt"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Prompt_Styler"
+      },
+      "widgets_values": [
+        "a woman img, retro futurism, retro game",
+        "asymmetry, worst quality, low quality, illustration, 3d, 2d, painting, cartoons, sketch), open mouth",
+        "Cinematic"
+      ],
+      "serialize_values": [
+        "a woman img, retro futurism, retro game",
+        "asymmetry, worst quality, low quality, illustration, 3d, 2d, painting, cartoons, sketch), open mouth",
+        null
+      ]
+    },
+    {
+      "id": 1,
+      "type": "NEW_PhotoMaker_Generation",
+      "pos": [
+        762,
+        506
+      ],
+      "size": {
+        "0": 320,
+        "1": 290
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "MODEL",
+          "link": 40,
+          "label": "pipe"
+        },
+        {
+          "name": "pil_image",
+          "type": "IMAGE",
+          "link": 5,
+          "slot_index": 1,
+          "label": "pil_image"
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 1,
+          "widget": {
+            "name": "positive"
+          },
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 2,
+          "widget": {
+            "name": "negative"
+          },
+          "label": "negative"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            36
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NEW_PhotoMaker_Generation"
+      },
+      "widgets_values": [
+        "",
+        "",
+        1,
+        20,
+        30,
+        5,
+        512,
+        512,
+        657070212014955,
+        "randomize"
+      ],
+      "serialize_values": [
+        "",
+        "",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      1,
+      2,
+      "STRING"
+    ],
+    [
+      2,
+      2,
+      1,
+      1,
+      3,
+      "STRING"
+    ],
+    [
+      4,
+      3,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      5,
+      4,
+      0,
+      1,
+      1,
+      "IMAGE"
+    ],
+    [
+      36,
+      1,
+      0,
+      29,
+      0,
+      "IMAGE"
+    ],
+    [
+      37,
+      31,
+      0,
+      30,
+      1,
+      "STRING"
+    ],
+    [
+      38,
+      26,
+      0,
+      30,
+      0,
+      "MODEL"
+    ],
+    [
+      40,
+      30,
+      0,
+      1,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

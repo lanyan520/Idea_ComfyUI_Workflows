@@ -1,0 +1,1991 @@
+{
+  "last_node_id": 83,
+  "last_link_id": 106,
+  "nodes": [
+    {
+      "id": 39,
+      "type": "GetNode",
+      "pos": [
+        869.8966941027827,
+        842.6466351974107
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            73
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_StableCascadeModel_C",
+      "properties": {},
+      "widgets_values": [
+        "StableCascadeModel_C"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 42,
+      "type": "GetNode",
+      "pos": [
+        901.8966941027827,
+        999.6466351974107
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            75
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_NegativePrompt",
+      "properties": {},
+      "widgets_values": [
+        "NegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 43,
+      "type": "GetNode",
+      "pos": [
+        946.8966941027828,
+        922.6466351974107
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            74
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_Prompt",
+      "properties": {},
+      "widgets_values": [
+        "Prompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 46,
+      "type": "GetNode",
+      "pos": [
+        1686.5852796766496,
+        870.746880425347
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            54
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_Prompt",
+      "properties": {},
+      "widgets_values": [
+        "Prompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 18,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        1891,
+        872
+      ],
+      "size": {
+        "0": 317.4000244140625,
+        "1": 26
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 54,
+          "label": "conditioning"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            12
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 35,
+      "type": "SetNode",
+      "pos": [
+        239,
+        975
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_StableCascadeVAE_B",
+      "properties": {
+        "previousName": "StableCascadeVAE_B"
+      },
+      "widgets_values": [
+        "StableCascadeVAE_B"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 32,
+      "type": "SetNode",
+      "pos": [
+        238,
+        926
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_StableCascadeModel_B",
+      "properties": {
+        "previousName": "StableCascadeModel_B"
+      },
+      "widgets_values": [
+        "StableCascadeModel_B"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 33,
+      "type": "SetNode",
+      "pos": [
+        239,
+        1032
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_StableCascadeModel_C",
+      "properties": {
+        "previousName": "StableCascadeModel_C"
+      },
+      "widgets_values": [
+        "StableCascadeModel_C"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 34,
+      "type": "SetNode",
+      "pos": [
+        240,
+        1089
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_StableCascadeVAE_C",
+      "properties": {
+        "previousName": "StableCascadeVAE_C"
+      },
+      "widgets_values": [
+        "StableCascadeVAE_C"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 36,
+      "type": "SetNode",
+      "pos": [
+        237,
+        1149
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_StableCasCadeClipVision",
+      "properties": {
+        "previousName": "StableCasCadeClipVision"
+      },
+      "widgets_values": [
+        "StableCasCadeClipVision"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 37,
+      "type": "SetNode",
+      "pos": [
+        241,
+        1206
+      ],
+      "size": {
+        "0": 226.8000030517578,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "title": "Set_StableCasCadeClip",
+      "properties": {
+        "previousName": "StableCasCadeClip"
+      },
+      "widgets_values": [
+        "StableCasCadeClip"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 31,
+      "type": "StableCascade_CheckpointLoader //Inspire",
+      "pos": [
+        -164,
+        934
+      ],
+      "size": {
+        "0": 315,
+        "1": 294
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "b_model",
+          "type": "MODEL",
+          "links": [
+            34
+          ],
+          "shape": 3,
+          "label": "b_model",
+          "slot_index": 0
+        },
+        {
+          "name": "b_vae",
+          "type": "VAE",
+          "links": [
+            35
+          ],
+          "shape": 3,
+          "label": "b_vae",
+          "slot_index": 1
+        },
+        {
+          "name": "c_model",
+          "type": "MODEL",
+          "links": [
+            36
+          ],
+          "shape": 3,
+          "label": "c_model",
+          "slot_index": 2
+        },
+        {
+          "name": "c_vae",
+          "type": "VAE",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "label": "c_vae",
+          "slot_index": 3
+        },
+        {
+          "name": "c_clip_vision",
+          "type": "CLIP_VISION",
+          "links": [
+            38
+          ],
+          "shape": 3,
+          "label": "c_clip_vision",
+          "slot_index": 4
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            39
+          ],
+          "shape": 3,
+          "label": "clip",
+          "slot_index": 5
+        },
+        {
+          "name": "key_b",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "key_b"
+        },
+        {
+          "name": "key_c",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "key_c"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StableCascade_CheckpointLoader //Inspire",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "checkpoints_placeholder@0F2A9B4C7E5D8.safetensors",
+        "",
+        "checkpoints_placeholder@0F2A9B4C7E5D8.safetensors",
+        "",
+        "none"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        "4918_6984_8139@6c218dc948.safetensors",
+        null,
+        "4918_6983_8138@088ddf1e44.safetensors",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 57,
+      "type": "GetNode",
+      "pos": [
+        865,
+        1129
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            77
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_StableCascadeVAE_C",
+      "properties": {},
+      "widgets_values": [
+        "StableCascadeVAE_C"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 45,
+      "type": "GetNode",
+      "pos": [
+        909,
+        1075
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            76
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_EmptyLatent_C",
+      "properties": {},
+      "widgets_values": [
+        "EmptyLatent_C"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 61,
+      "type": "GetNode",
+      "pos": [
+        60,
+        1740
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            71,
+            72
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_StableCasCadeClip",
+      "properties": {},
+      "widgets_values": [
+        "StableCasCadeClip"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 60,
+      "type": "CLIPTextEncode",
+      "pos": [
+        50,
+        2040
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 72,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            69
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "embedding:EasyNegativeV2, embedding:ng_deepnegative_v1_75t, "
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        "embedding:EasyNegativeV2, embedding:ng_deepnegative_v1_75t, "
+      ]
+    },
+    {
+      "id": 66,
+      "type": "StableCascade_EmptyLatentImage",
+      "pos": [
+        60,
+        2290
+      ],
+      "size": [
+        380.0283348819321,
+        150
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 83,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 84,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "stage_c",
+          "type": "LATENT",
+          "links": [
+            81
+          ],
+          "shape": 3,
+          "label": "stage_c",
+          "slot_index": 0
+        },
+        {
+          "name": "stage_b",
+          "type": "LATENT",
+          "links": [
+            82
+          ],
+          "shape": 3,
+          "label": "stage_b",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StableCascade_EmptyLatentImage",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        42,
+        1
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 41,
+      "type": "SetNode",
+      "pos": [
+        550,
+        2070
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 69
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_NegativePrompt",
+      "properties": {
+        "previousName": "NegativePrompt"
+      },
+      "widgets_values": [
+        "NegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 40,
+      "type": "SetNode",
+      "pos": [
+        560,
+        1810
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 68
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_Prompt",
+      "properties": {
+        "previousName": "Prompt"
+      },
+      "widgets_values": [
+        "Prompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 49,
+      "type": "GetNode",
+      "pos": [
+        2307,
+        793
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            99
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_StableCascadeModel_B",
+      "properties": {},
+      "widgets_values": [
+        "StableCascadeModel_B"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 48,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        2350,
+        940
+      ],
+      "size": {
+        "0": 317.4000244140625,
+        "1": 26
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 55,
+          "label": "conditioning",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            101
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 77,
+      "type": "GetNode",
+      "pos": [
+        2358,
+        990
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            102
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_EmptyLatent_B",
+      "properties": {},
+      "widgets_values": [
+        "EmptyLatent_B"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 51,
+      "type": "GetNode",
+      "pos": [
+        2328,
+        1039
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            103
+          ]
+        }
+      ],
+      "title": "Get_StableCascadeVAE_B",
+      "properties": {},
+      "widgets_values": [
+        "StableCascadeVAE_B"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 80,
+      "type": "SetNode",
+      "pos": [
+        3063,
+        952
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 105,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_ResultImage",
+      "properties": {
+        "previousName": "ResultImage"
+      },
+      "widgets_values": [
+        "ResultImage"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 23,
+      "type": "StableCascade_StageB_Conditioning",
+      "pos": [
+        2205,
+        843
+      ],
+      "size": {
+        "0": 317.4000244140625,
+        "1": 46
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 12,
+          "label": "conditioning"
+        },
+        {
+          "name": "stage_c",
+          "type": "LATENT",
+          "link": 78,
+          "label": "stage_c"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            100
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StableCascade_StageB_Conditioning",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 81,
+      "type": "GetNode",
+      "pos": [
+        1527,
+        1055
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            106
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_ResultImage",
+      "properties": {},
+      "widgets_values": [
+        "ResultImage"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 44,
+      "type": "SetNode",
+      "pos": [
+        558,
+        2308
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "link": 81
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_EmptyLatent_C",
+      "properties": {
+        "previousName": "EmptyLatent_C"
+      },
+      "widgets_values": [
+        "EmptyLatent_C"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 67,
+      "type": "SetNode",
+      "pos": [
+        560,
+        2363
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "link": 82
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_EmptyLatent_B",
+      "properties": {
+        "previousName": "EmptyLatent_B"
+      },
+      "widgets_values": [
+        "EmptyLatent_B"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 68,
+      "type": "CascadeResolutions",
+      "pos": [
+        -446,
+        2291
+      ],
+      "size": {
+        "0": 315,
+        "1": 102
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            83
+          ],
+          "shape": 3,
+          "label": "width",
+          "slot_index": 0
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            84
+          ],
+          "shape": 3,
+          "label": "height",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CascadeResolutions",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "768x1024 (3:4) - Portrait Small",
+        1
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 63,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        1131,
+        813
+      ],
+      "size": [
+        325,
+        562
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 73,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 74,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 75,
+          "label": "negative"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 76,
+          "label": "latent_image"
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 77,
+          "label": "optional_vae",
+          "slot_index": 4
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null,
+          "label": "script"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "MODEL"
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "CONDITIONING+"
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "CONDITIONING-"
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            78
+          ],
+          "shape": 3,
+          "label": "LATENT",
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [],
+          "shape": 3,
+          "label": "VAE",
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        817198990103066,
+        null,
+        20,
+        4,
+        "euler_ancestral",
+        "simple",
+        1,
+        "auto",
+        "true"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "shape": 1,
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 76,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        2567,
+        822
+      ],
+      "size": [
+        325,
+        562
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 99,
+          "label": "model",
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 100,
+          "label": "positive",
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 101,
+          "label": "negative",
+          "slot_index": 2
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 102,
+          "label": "latent_image",
+          "slot_index": 3
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 103,
+          "label": "optional_vae",
+          "slot_index": 4
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null,
+          "label": "script",
+          "slot_index": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "MODEL"
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "CONDITIONING+"
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "CONDITIONING-"
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "label": "LATENT",
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "VAE"
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            105
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        937474559038698,
+        null,
+        10,
+        1.1,
+        "euler_ancestral",
+        "simple",
+        1,
+        "auto",
+        "true"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "shape": 1,
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 47,
+      "type": "GetNode",
+      "pos": [
+        2080,
+        940
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            55
+          ]
+        }
+      ],
+      "title": "Get_NegativePrompt",
+      "properties": {},
+      "widgets_values": [
+        "NegativePrompt"
+      ],
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 82,
+      "type": "PreviewImage",
+      "pos": [
+        1513,
+        1094
+      ],
+      "size": [
+        1008.6812608506693,
+        1342.5559149847936
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 106,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 59,
+      "type": "CLIPTextEncode",
+      "pos": [
+        50,
+        1780
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 71,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            68
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "Masterpiece, high-definition, best quality, 8k, clear face，1 girl, long hair ,night, black dress, white hair， Realistic portrait photography, street photography style"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        "Masterpiece, high-definition, best quality, 8k, clear face，1 girl, long hair ,night, black dress, white hair， Realistic portrait photography, street photography style"
+      ]
+    },
+    {
+      "id": 83,
+      "type": "Note",
+      "pos": [
+        1000,
+        1463
+      ],
+      "size": [
+        458.6715016310061,
+        239.8767258946707
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n   这和早期他们上传的工作流加载方式不同\n   网站有人上传了Stable_B _C模型，加上节点更新算是运行成功了\n   C阶段cfg控制在4左右自己调整\n   B阶段控制在step10cfg1左右\n   A阶段VAEDecode生成图片\n   网站有生成图片大小限制，尽量用1024*1024、768*1024\n   最好不要用full body, 尺寸不够脸崩几率极高\n-----------------------------------------------------------\n   之前被他们上传的工作流给误导来！！\n   打完游戏来灵感了，收工！！\n\n   \n   "
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      12,
+      18,
+      0,
+      23,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      34,
+      31,
+      0,
+      32,
+      0,
+      "*"
+    ],
+    [
+      35,
+      31,
+      1,
+      35,
+      0,
+      "*"
+    ],
+    [
+      36,
+      31,
+      2,
+      33,
+      0,
+      "*"
+    ],
+    [
+      37,
+      31,
+      3,
+      34,
+      0,
+      "*"
+    ],
+    [
+      38,
+      31,
+      4,
+      36,
+      0,
+      "*"
+    ],
+    [
+      39,
+      31,
+      5,
+      37,
+      0,
+      "*"
+    ],
+    [
+      54,
+      46,
+      0,
+      18,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      55,
+      47,
+      0,
+      48,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      68,
+      59,
+      0,
+      40,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      69,
+      60,
+      0,
+      41,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      71,
+      61,
+      0,
+      59,
+      0,
+      "CLIP"
+    ],
+    [
+      72,
+      61,
+      0,
+      60,
+      0,
+      "CLIP"
+    ],
+    [
+      73,
+      39,
+      0,
+      63,
+      0,
+      "MODEL"
+    ],
+    [
+      74,
+      43,
+      0,
+      63,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      75,
+      42,
+      0,
+      63,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      76,
+      45,
+      0,
+      63,
+      3,
+      "LATENT"
+    ],
+    [
+      77,
+      57,
+      0,
+      63,
+      4,
+      "VAE"
+    ],
+    [
+      78,
+      63,
+      3,
+      23,
+      1,
+      "LATENT"
+    ],
+    [
+      81,
+      66,
+      0,
+      44,
+      0,
+      "LATENT"
+    ],
+    [
+      82,
+      66,
+      1,
+      67,
+      0,
+      "*"
+    ],
+    [
+      83,
+      68,
+      0,
+      66,
+      0,
+      "INT"
+    ],
+    [
+      84,
+      68,
+      1,
+      66,
+      1,
+      "INT"
+    ],
+    [
+      99,
+      49,
+      0,
+      76,
+      0,
+      "MODEL"
+    ],
+    [
+      100,
+      23,
+      0,
+      76,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      101,
+      48,
+      0,
+      76,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      102,
+      77,
+      0,
+      76,
+      3,
+      "LATENT"
+    ],
+    [
+      103,
+      51,
+      0,
+      76,
+      4,
+      "VAE"
+    ],
+    [
+      105,
+      76,
+      5,
+      80,
+      0,
+      "*"
+    ],
+    [
+      106,
+      81,
+      0,
+      82,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Group",
+      "bounding": [
+        -261,
+        695,
+        1041,
+        926
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        -570,
+        1629,
+        1354,
+        862
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        788,
+        695,
+        2976,
+        1793
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
