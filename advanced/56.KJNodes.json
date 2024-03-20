@@ -1,0 +1,1622 @@
+{
+  "last_node_id": 37,
+  "last_link_id": 34,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "pos": [
+        923,
+        450
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ],
+          "shape": 3,
+          "label": "IMAGE",
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "https://bfs.esheep.com/bfs/aikobo-bfs/app/comfy/b5881c40e4ded2f7609ba4fec4a60f6467898756.png@1536w_1536h_0e",
+        "image"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 4,
+      "type": "SetNode",
+      "pos": [
+        1343,
+        479
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 1,
+          "label": "IMAGE"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_FaceImage",
+      "properties": {
+        "previousName": "FaceImage",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "FaceImage"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 5,
+      "type": "GetNode",
+      "pos": [
+        1034,
+        958
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_FaceImage",
+      "properties": {
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "FaceImage"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 10,
+      "type": "LayerUtility: ColorPicker",
+      "pos": [
+        1338,
+        800
+      ],
+      "size": {
+        "0": 299.8930358886719,
+        "1": 106.15623474121094
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "value"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LayerUtility: ColorPicker",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "#0c0b0d",
+        "HEX"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 11,
+      "type": "ConditioningMultiCombine",
+      "pos": [
+        1131,
+        1219
+      ],
+      "size": {
+        "0": 218.39999389648438,
+        "1": 222
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 4,
+          "label": "conditioning_1"
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 5,
+          "label": "conditioning_2"
+        },
+        {
+          "name": "conditioning_3",
+          "type": "CONDITIONING",
+          "link": 6,
+          "label": "conditioning_3"
+        },
+        {
+          "name": "conditioning_4",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "conditioning_4"
+        },
+        {
+          "name": "conditioning_5",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "conditioning_5"
+        },
+        {
+          "name": "conditioning_6",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "conditioning_6"
+        },
+        {
+          "name": "conditioning_7",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "conditioning_7"
+        },
+        {
+          "name": "conditioning_8",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "conditioning_8"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "combined",
+          "type": "CONDITIONING",
+          "links": [],
+          "shape": 3,
+          "label": "combined",
+          "slot_index": 0
+        },
+        {
+          "name": "inputcount",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "inputcount",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningMultiCombine",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        8,
+        null
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 1,
+      "type": "ColorToMask",
+      "pos": [
+        1331,
+        959
+      ],
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2,
+          "label": "images"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "label": "MASK",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ColorToMask",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        false,
+        12,
+        11,
+        13,
+        30
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 12,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        692,
+        1234
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            4,
+            5,
+            6
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "",
+        "none",
+        "comfy"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        "",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 6,
+      "type": "LayerMask: MaskPreview",
+      "pos": [
+        1717,
+        959
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 3,
+          "label": "mask"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LayerMask: MaskPreview",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 20,
+      "type": "GetNode",
+      "pos": [
+        338,
+        1568
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            16
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "title": "Get_FaceImage",
+      "properties": {
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "FaceImage"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null
+      ]
+    },
+    {
+      "id": 18,
+      "type": "LayerMask: MaskPreview",
+      "pos": [
+        1532,
+        1698
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 12,
+          "label": "mask"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LayerMask: MaskPreview",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 33,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        2700,
+        510
+      ],
+      "size": {
+        "0": 323.3099060058594,
+        "1": 200.96409606933594
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            28
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "",
+        "mean",
+        "A1111"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        "",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 34,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        2700,
+        750
+      ],
+      "size": {
+        "0": 323.3099060058594,
+        "1": 200.96409606933594
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            29
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "",
+        "mean",
+        "A1111"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        "",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 35,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        2710,
+        1000
+      ],
+      "size": {
+        "0": 323.3099060058594,
+        "1": 200.96409606933594
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            30
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "",
+        "mean",
+        "A1111"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        "",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 31,
+      "type": "CreateRegionalPNGMask",
+      "pos": [
+        2270,
+        1259
+      ],
+      "size": {
+        "0": 315,
+        "1": 238
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "PngImage",
+          "type": "IMAGE",
+          "links": [
+            20,
+            22
+          ],
+          "shape": 3,
+          "label": "PngImage",
+          "slot_index": 0
+        },
+        {
+          "name": "PngColorMasks",
+          "type": "LIST",
+          "links": [
+            21
+          ],
+          "shape": 3,
+          "label": "PngColorMasks",
+          "slot_index": 1
+        },
+        {
+          "name": "PngRectangles",
+          "type": "LIST",
+          "links": null,
+          "shape": 3,
+          "label": "PngRectangles"
+        },
+        {
+          "name": "Debug",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "Debug"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateRegionalPNGMask",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        576,
+        1024,
+        false,
+        1,
+        1,
+        "1,3,1"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 32,
+      "type": "PreviewImage",
+      "pos": [
+        3199,
+        1265
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 22,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 29,
+      "type": "PngColorMasksToMaskList",
+      "pos": [
+        2719,
+        1260
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "PngImage",
+          "type": "IMAGE",
+          "link": 20,
+          "label": "PngImage"
+        },
+        {
+          "name": "PngColorMasks",
+          "type": "LIST",
+          "link": 21,
+          "label": "PngColorMasks"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mask_0",
+          "type": "MASK",
+          "links": [
+            25
+          ],
+          "shape": 3,
+          "label": "mask_0",
+          "slot_index": 0
+        },
+        {
+          "name": "mask_1",
+          "type": "MASK",
+          "links": [
+            26
+          ],
+          "shape": 3,
+          "label": "mask_1",
+          "slot_index": 1
+        },
+        {
+          "name": "mask_2",
+          "type": "MASK",
+          "links": [
+            27
+          ],
+          "shape": 3,
+          "label": "mask_2",
+          "slot_index": 2
+        },
+        {
+          "name": "mask_3",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "mask_3"
+        },
+        {
+          "name": "mask_4",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "mask_4"
+        },
+        {
+          "name": "mask_5",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "mask_5"
+        },
+        {
+          "name": "mask_6",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "mask_6"
+        },
+        {
+          "name": "mask_7",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "mask_7"
+        },
+        {
+          "name": "mask_8",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "mask_8"
+        },
+        {
+          "name": "mask_9",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "mask_9"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PngColorMasksToMaskList",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        10,
+        0
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": 37,
+      "type": "Anything Everywhere",
+      "pos": [
+        2410,
+        860
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CLIP",
+          "type": "*",
+          "link": 31,
+          "label": "CLIP",
+          "color_on": "#FFD500"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Anything Everywhere",
+        "group_restricted": false,
+        "color_restricted": false,
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 23,
+      "type": "ConditioningSetMaskAndCombine5",
+      "pos": [
+        3308,
+        665
+      ],
+      "size": {
+        "0": 355.20001220703125,
+        "1": 458
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive_1",
+          "type": "CONDITIONING",
+          "link": 28,
+          "label": "positive_1"
+        },
+        {
+          "name": "negative_1",
+          "type": "CONDITIONING",
+          "link": 29,
+          "label": "negative_1"
+        },
+        {
+          "name": "positive_2",
+          "type": "CONDITIONING",
+          "link": 30,
+          "label": "positive_2"
+        },
+        {
+          "name": "negative_2",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "negative_2"
+        },
+        {
+          "name": "positive_3",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "positive_3"
+        },
+        {
+          "name": "negative_3",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "negative_3"
+        },
+        {
+          "name": "positive_4",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "positive_4"
+        },
+        {
+          "name": "negative_4",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "negative_4"
+        },
+        {
+          "name": "positive_5",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "positive_5"
+        },
+        {
+          "name": "negative_5",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "negative_5"
+        },
+        {
+          "name": "mask_1",
+          "type": "MASK",
+          "link": 25,
+          "label": "mask_1"
+        },
+        {
+          "name": "mask_2",
+          "type": "MASK",
+          "link": 26,
+          "label": "mask_2"
+        },
+        {
+          "name": "mask_3",
+          "type": "MASK",
+          "link": 27,
+          "label": "mask_3"
+        },
+        {
+          "name": "mask_4",
+          "type": "MASK",
+          "link": null,
+          "label": "mask_4"
+        },
+        {
+          "name": "mask_5",
+          "type": "MASK",
+          "link": null,
+          "label": "mask_5"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "combined_positive",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "combined_positive"
+        },
+        {
+          "name": "combined_negative",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3,
+          "label": "combined_negative"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningSetMaskAndCombine5",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        "default"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 36,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        2270,
+        720
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "MODEL"
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            31
+          ],
+          "shape": 3,
+          "label": "CLIP",
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "majicMIX realistic(v7)"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        "192_3750_4424@7c819b6d13.safetensors"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "LayerMask: PersonMaskUltra",
+      "pos": [
+        636,
+        1567
+      ],
+      "size": {
+        "0": 314.95703125,
+        "1": 325.4656066894531
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 16,
+          "label": "images"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "label": "image",
+          "slot_index": 0
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            17
+          ],
+          "shape": 3,
+          "label": "mask",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LayerMask: PersonMaskUltra",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        0.4,
+        16,
+        0.01,
+        0.99,
+        true
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 14,
+      "type": "GrowMaskWithBlur",
+      "pos": [
+        988,
+        1586
+      ],
+      "size": {
+        "0": 315,
+        "1": 222
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 17,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            11
+          ],
+          "shape": 3,
+          "label": "mask",
+          "slot_index": 0
+        },
+        {
+          "name": "mask_inverted",
+          "type": "MASK",
+          "links": [
+            12
+          ],
+          "shape": 3,
+          "label": "mask_inverted",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GrowMaskWithBlur",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        0,
+        0,
+        true,
+        false,
+        0,
+        1,
+        1
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "serialize_values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 21,
+      "type": "PreviewImage",
+      "pos": [
+        1885,
+        1554
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 18,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 16,
+      "type": "LayerMask: MaskPreview",
+      "pos": [
+        1530,
+        1413
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 11,
+          "label": "mask"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LayerMask: MaskPreview",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 2,
+      "type": "Note",
+      "pos": [
+        345,
+        365
+      ],
+      "size": {
+        "0": 487.6676330566406,
+        "1": 657.5278930664062
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "\n\n   KJNodes学习笔记\n\n   setNode \\getNode ：跟java的变量set get一样，set定义变量名称，在任意地方获取名称对应变量\n\n   ColorToMask：根据颜色扣图生成mask\n   如果是取色值不清楚可以使用ColorPicker,谷歌以外的浏览器可能无法使用\n\n   mask预览可以直接使用LayerMask: MaskPreview\n\n\n   ConditioningMultiCombine:支持自定义数量的conditioning 组合\n\n   ConditioningSetMaskAndCombine: 分区控制，不同区域mask和prompt组合\n   这个非常好用，配合PngColorMask\n\n   GrowMaskWithBlur:功能性组合节省空间\n\n   PersonMaskUtra扣人物细节比较好，但是网站目前好像有bug\n\n   "
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "serialize_values": [
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      3,
+      0,
+      4,
+      0,
+      "*"
+    ],
+    [
+      2,
+      5,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ],
+    [
+      3,
+      1,
+      0,
+      6,
+      0,
+      "MASK"
+    ],
+    [
+      4,
+      12,
+      0,
+      11,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      5,
+      12,
+      0,
+      11,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      12,
+      0,
+      11,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      11,
+      14,
+      0,
+      16,
+      0,
+      "MASK"
+    ],
+    [
+      12,
+      14,
+      1,
+      18,
+      0,
+      "MASK"
+    ],
+    [
+      16,
+      20,
+      0,
+      26,
+      0,
+      "IMAGE"
+    ],
+    [
+      17,
+      26,
+      1,
+      14,
+      0,
+      "MASK"
+    ],
+    [
+      18,
+      26,
+      0,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      20,
+      31,
+      0,
+      29,
+      0,
+      "IMAGE"
+    ],
+    [
+      21,
+      31,
+      1,
+      29,
+      1,
+      "LIST"
+    ],
+    [
+      22,
+      31,
+      0,
+      32,
+      0,
+      "IMAGE"
+    ],
+    [
+      25,
+      29,
+      0,
+      23,
+      10,
+      "MASK"
+    ],
+    [
+      26,
+      29,
+      1,
+      23,
+      11,
+      "MASK"
+    ],
+    [
+      27,
+      29,
+      2,
+      23,
+      12,
+      "MASK"
+    ],
+    [
+      28,
+      33,
+      0,
+      23,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      29,
+      34,
+      0,
+      23,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      30,
+      35,
+      0,
+      23,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      31,
+      36,
+      1,
+      37,
+      0,
+      "*"
+    ],
+    [
+      32,
+      36,
+      1,
+      33,
+      0,
+      "CLIP"
+    ],
+    [
+      33,
+      36,
+      1,
+      34,
+      0,
+      "CLIP"
+    ],
+    [
+      34,
+      36,
+      1,
+      35,
+      0,
+      "CLIP"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Group",
+      "bounding": [
+        234,
+        229,
+        3605,
+        1771
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
